@@ -8,6 +8,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { BestSellerComponent } from './components/best-seller/best-seller.component';
 
 const routes: Routes = [
   {path:'',component:MainLayoutComponent,children:[
@@ -15,7 +16,8 @@ const routes: Routes = [
     {path:'Categories',component:CategoriesComponent,title:'Categories Page'},
     {path:'Favorites',component:FavoritesComponent,title:'favorites Page'},
     {path:'cart',component:CartComponent,title:'cart Page'},
-    {path:'Product',component:ProductListComponent,title:'Products Page'},
+    {path:'Products',component:ProductListComponent,title:'Products Page'},
+    {path:'Best Seller',component:BestSellerComponent,title:'Best seller Page'}
   
   ]}
 ];
