@@ -7,6 +7,7 @@ import { MainLayoutComponent } from './components/main-layout/main-layout.compon
 import { CategoriesComponent } from './components/categories/categories.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 const routes: Routes = [
   {path:'',component:MainLayoutComponent,children:[
@@ -14,7 +15,8 @@ const routes: Routes = [
     {path:'Categories',component:CategoriesComponent,title:'Categories Page'},
     {path:'Favorites',component:FavoritesComponent,title:'favorites Page'},
     {path:'cart',component:CartComponent,title:'cart Page'},
-   
+    {path:'Product',component:ProductListComponent,title:'Products Page'},
+  
   ]}
 ];
 
