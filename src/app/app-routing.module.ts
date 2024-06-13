@@ -15,7 +15,7 @@ const routes: Routes = [
     {path:'Home',component:HomeComponent,title:'Home Page'},
     {path:'Categories',component:CategoriesComponent,title:'Categories Page'},
     {path:'Favorites',component:FavoritesComponent,title:'favorites Page'},
-    {path:'cart',component:CartComponent,title:'cart Page'},
+    {path:'cart',component:CartComponent,title:'YourCart'},
     {path:'Products',component:ProductListComponent,title:'Products Page'},
     {path:'Best Seller',component:BestSellerComponent,title:'Best seller Page'}
   
