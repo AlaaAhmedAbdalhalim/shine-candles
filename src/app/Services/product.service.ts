@@ -64,4 +64,15 @@ export class ProductService {
     const catName = this.catList.find(cat => cat.catid ==catId );
     return catName;
   }
+  findFavProds(prodsIds:number[]) :Products []{
+    return this.prodList.filter (obj => prodsIds.includes(obj.id))
+   }
+  getProdById(Prodid: number): Products | undefined {
+    return this.prodList.find(prod => prod.id == Prodid);
+  }
+  getProdsByCatId(catId: number): Products[]  
+  {
+    const filteredProducts = this.prodList.filter(prod => prod.categoryId === catId);
+    return filteredProducts;
+  }
 }
