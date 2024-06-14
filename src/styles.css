@@ -4,3 +4,7 @@
     --secandary-color: #ffe4c4;
     
 }
+.pe-auto
+{
+    cursor: pointer !important;
+}
