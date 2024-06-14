@@ -13,10 +13,10 @@ export class ProductService {
     this.prodList=[{ id:1, name:'Latte Candle',img:'../../../../../assets/images/c.jpg',Description:' A Latte Candle is a decorative wax candle crafted to resemble a cup of latte, complete with a coffee-colored body. Infused with aromatic scents reminiscent of freshly brewed coffee, it adds both visual charm and delightful fragrance to any space.',
                     price:400,offer:'',quantity:5,categoryId: 1, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:0},
                   
-                    { id:2, name:'cinnamon Candle',img:'../../../../../assets/images/cinnamon Candles.jpg',Description:'A Cinnamon Candle is a scented candle infused with the warm, spicy fragrance of cinnamon, evoking cozy memories of holiday baking and seasonal festivities. '
+                    { id:2, name:'cinnamon Candle',img:'../../../../../assets/images/cinnamon Candle.jpg',Description:'A Cinnamon Candle is a scented candle infused with the warm, spicy fragrance of cinnamon, evoking cozy memories of holiday baking and seasonal festivities. '
                    ,price:500,offer:'70% off',quantity:4,categoryId: 2, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:0},
                    
-                   { id:3, name:'Coffee Candle',img:'../../../../../assets/images/Coffee candle.jpg',Description:'A Coffee Candle is a scented candle infused with the warm, spicy fragrance of Coffee, evoking cozy memories of holiday baking and seasonal festivities. '
+                   { id:3, name:'Coffee Candle',img:'../../../../../assets/images/Coffe Candle.jpg',Description:'A Coffee Candle is a scented candle infused with the warm, spicy fragrance of Coffee, evoking cozy memories of holiday baking and seasonal festivities. '
                    ,price:700,offer:'70% off',quantity:1,categoryId: 2, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:0},
 
                    { id:4, name:'lemon candle',img:'../../../../../assets/images/lemon candle.jpg',Description:'A lemon candle is a scented candle infused with the warm, spicy fragrance of Lemon , evoking cozy memories of holiday baking and seasonal festivities. '
