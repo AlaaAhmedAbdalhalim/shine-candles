@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Products } from '../../models/products';
 import { ProductService } from '../../Services/product.service';
 import { Router } from '@angular/router';
+import { FavouriteService } from '../../Services/favourite.service';
 
 @Component({
   selector: 'app-products',
@@ -13,7 +14,7 @@ export class ProductsComponent {
   @Input() product: Products | undefined;
   displayproducts: Products[] | undefined;
   constructor(private productService: ProductService,
-             /*  private favService: FavouriteService, */
+              private favService: FavouriteService,
               private router :Router)
   {
 
@@ -21,12 +22,12 @@ export class ProductsComponent {
   ngOnInit(): void {
     this.displayproducts = this.productService.getAllProducts();
   }
-  /* addToFavourite(prodId: number) {
+  addToFavourite(prodId: number) {
     this.favService.addToFavourite(prodId);
   }
   isFavourite(prodid: number): boolean {
     return this.favService.isFavourite(prodid);
-  } */
+  }
   openDetails(prodId :number){
     this.router.navigate(['ProductDetails',prodId]);
   }
