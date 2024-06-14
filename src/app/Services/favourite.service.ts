@@ -26,7 +26,7 @@ export class FavouriteService {
   isFavourite(productId: number): boolean {
     return this.productIdSource.value.includes(productId);
   }
- /*  addToFavourite(prodId: number) {
+  addToFavourite(prodId: number) {
     if (this.isFavourite(prodId)) {
       this.productService.getProdById(prodId)!.favStatus = this.source;
       this.removeFavourite(prodId);
@@ -36,6 +36,6 @@ export class FavouriteService {
       this.productService.getProdById(prodId)!.favStatus = '../../../../assets/icons/Favourite.svg';
       this.addFavourite(prodId);
     }
-  } */
+  }
  
 }
