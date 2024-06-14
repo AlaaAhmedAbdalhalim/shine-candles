@@ -1,0 +1,18 @@
+h1{
+    font-family: 'Italianno', cursive;
+    font-size: 7rem;
+    width: fit-content;
+    color:  var(--primary-color);;
+}
+p{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.4rem ;
+    color:  var(--secondary-color);;
+}
+
+.ms-5{
+    margin-left: 6rem !important;
+}
+.secandImg{
+    margin-top: 12rem !important;
+}
