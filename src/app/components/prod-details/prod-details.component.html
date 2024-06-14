@@ -1,1 +1,27 @@
-<p>prod-details works!</p>
+<div class=" d-flex justify-content-center ms-5">
+    <img [src]='[prodDetails?.img]' class="img-fluid rounded mt-5 position-relative" style='width:22rem '
+       alt="Example Image">
+    <a (click)="addToFavourite(prodDetails!.id)" class="pe-auto">
+       <img [src]='prodDetails?.favStatus' width='25rem' alt="Favourite Icon" class="position-absolute  icon">
+    </a> 
+ <div class=" ms-5 my-auto ">
+
+    <h5 class="card-text fs-1 d-inline-block "> {{prodDetails?.name}}</h5>
+    <p class="fw-bold text-success fs-4 d-inline-block ms-2" style="width: 6rem;"> {{prodDetails?.price}} EGP </p>
+    <p class=" text-body-secondary w-40  "> {{prodDetails?.Description}} </p>
+    <div class="qty mt-1">
+       <label class="fw-bold fs-5 me-3 rounded-start">Quantity : </label>
+       <button class="btn btn-sm  btn-outline-secondary" (click)="decrement()">-</button>
+       <input type="text" class="count btn btn-sm  btn-outline-secondary" min="0" [max]="prodDetails?.quantity"
+          name="qty" [value]="inputValue">
+       <button class="btn btn-outline-secondary  btn-sm rounded-end" (click)="increment()">+</button>
+    </div>
+    <p class="card-text text-danger fw-bold  fs-5" style="width: 9rem;" *ngIf="prodDetails?.offer!=''">Offer :
+       {{prodDetails?.offer}}</p>
+    <div class=" d-grid gap-2 col-2">
+       <button class="  btn btn-primary " type="button">Add to cart</button>
+       <!-- (click)="Buy(inputValue,prodDetails?.id)"  -->
+    </div>
+ </div>
+</div>   
+
