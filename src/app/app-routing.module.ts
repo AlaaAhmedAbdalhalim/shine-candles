@@ -9,6 +9,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { BestSellerComponent } from './components/best-seller/best-seller.component';
 import { ProdDetailsComponent } from './components/prod-details/prod-details.component';
+import { CatDetailsComponent } from './components/cat-details/cat-details.component';
 
 const routes: Routes = [
   {path:'',component:MainLayoutComponent,children:[
@@ -19,8 +20,9 @@ const routes: Routes = [
     {path:'cart',component:CartComponent,title:'YourCart'},
     {path:'Products',component:ProductListComponent,title:'Products Page'},
     {path:'Best Seller',component:BestSellerComponent,title:'Best seller Page'},
-    {path:'ProductDetails/:prodId',component:ProdDetailsComponent,title:'Product Details Page'}
-  
+    {path:'ProductDetails/:prodId',component:ProdDetailsComponent,title:'Product Details Page'},
+    {path:'CatDetails/:catId',component:CatDetailsComponent,title:'Categories Details Page'},
+
   ]}
 ];
 

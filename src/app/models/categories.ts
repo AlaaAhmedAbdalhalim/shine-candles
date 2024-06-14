@@ -1,5 +1,5 @@
 export interface Categories {
     catid:number,
-    name:string,
+    CategoryName:string,
     catImg: string
 }

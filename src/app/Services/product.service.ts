@@ -42,13 +42,13 @@ export class ProductService {
                   ]
 
 
-    this.catList=[{catid:4,name:'Wick Timmer',catImg:'../../../../../assets/images/Wick Timmer cat.jpg'},
-                  {catid:5,name:'Wick Dipper',catImg:'../../../../../assets/images/Wick Dipper.jpg'},
-                  {catid:6,name:'Candle Snuffer',catImg:'../../../../../assets/images/Candle Snuffer.jpg'},
-                  {catid:2,name:'Scented Candle ',catImg:'../../../../../assets/images/cinnamon Candle.jpg'},
-                  {catid:1,name:'Gel Candle',catImg:'../../../../../assets/images/Gel candles.jpg'},
-                  {catid:3,name:'Handmade Candle ',catImg:'../../../../../assets/images/Handmade Candles.jpg'},
-                  {catid:7,name:'Candle Lighter',catImg:'../../../../../assets/images/candleLighter.jpg'},
+    this.catList=[{catid:4,CategoryName:'Wick Timmer',catImg:'../../../../../assets/images/Wick Timmer cat.jpg'},
+                  {catid:5,CategoryName:'Wick Dipper',catImg:'../../../../../assets/images/Wick Dipper.jpg'},
+                  {catid:6,CategoryName:'Candle Snuffer',catImg:'../../../../../assets/images/Candle Snuffer.jpg'},
+                  {catid:2,CategoryName:'Scented Candle ',catImg:'../../../../../assets/images/cinnamon Candle.jpg'},
+                  {catid:1,CategoryName:'Gel Candle',catImg:'../../../../../assets/images/Gel candles.jpg'},
+                  {catid:3,CategoryName:'Handmade Candle ',catImg:'../../../../../assets/images/Handmade Candles.jpg'},
+                  {catid:7,CategoryName:'Candle Lighter',catImg:'../../../../../assets/images/candleLighter.jpg'},
                   ]}
 
   getAllProducts(): Products[] {
