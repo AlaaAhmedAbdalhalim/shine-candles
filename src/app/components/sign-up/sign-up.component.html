@@ -1,0 +1,63 @@
+<form class=" d-flex flex-row  justify-content-between rounded shadow-lg my-5 mx-5 needs-validation"  #userForm="ngForm">
+  <div class="mx-auto my-auto"> 
+    <h1 class="mx-auto"> Hello there.</h1>
+    <p class="text-secondary"> you need an account to continue </p>
+    <div class="mb-3 mt-3">
+      <div>
+        <input type="text" class=" form-control my-3  d-inline-flex "  placeholder="First name" aria-label="First name" 
+        [(ngModel)]="userObj.firstName"name="firstName" #firstName="ngModel" minlength="3" required>
+        <div *ngIf="firstName.invalid && (firstName.touched || firstName.dirty) || isFormSubmitted" class="text-danger">
+          <span *ngIf="firstName.errors?.['required']">Please fill out this field.</span>
+          <span *ngIf="firstName.errors?.['minlength']">Word is Very small.</span>
+        </div>
+      </div>  
+      <div>
+        <input type="text" class="form-control d-inline-flex" placeholder="Last name" name="lastName" #lastName="ngModel"
+         [(ngModel)]="userObj.lastName"  minlength="3" required>
+         <div *ngIf="lastName.invalid && (lastName.touched || lastName.dirty) || isFormSubmitted" class="text-danger">
+          <span *ngIf="lastName.errors?.['required']">Please fill out this field.</span>
+          <span *ngIf="lastName.errors?.['minlength']">Must be 3-30 characters long.</span>
+        </div>
+      </div>
+      <div >
+        <input type="email" class="form-control mt-3" placeholder="Enter Email" #email="ngModel" [(ngModel)]="userObj.email"
+        name="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required>
+        <div *ngIf="email.invalid && (email.touched || email.dirty) || isFormSubmitted" class="text-danger">
+          <span *ngIf="email.errors?.['required']">Please fill out this field.</span>
+          <span *ngIf="email.errors?.['pattern']">Invalid email address</span>
+        </div>
+      </div>
+      <div >
+        <input type="password" class="form-control mt-3" id="pwd" placeholder="Enter password"  #password="ngModel" 
+        [(ngModel)]="userObj.password" name="password" minlength="10" required>
+        <div *ngIf="password.invalid && (password.touched || password.dirty) || isFormSubmitted" class="text-danger">
+          <span *ngIf="password.errors?.['required']">Please fill out this field.</span>
+          <span *ngIf="password.errors?.['minlength']">Must be 10-20 characters long.</span>
+        </div>
+      </div>
+      <div >
+        <input type="text" class="form-control mt-3"  placeholder="Enter Your City" #city="ngModel" [(ngModel)]="userObj.city"
+        name="city" >
+        <input type="text" class="form-control mt-3"  placeholder="Enter Your State" #state="ngModel" [(ngModel)]="userObj.state"
+        name="state" >
+      </div>
+      <p></p>
+      <button type="button" class="btn btn-primary d-block mx-auto mt-3" 
+      (click)="submitForm(userForm)" [disabled]="!userForm.form.valid">
+      Submit
+    </button>
+      <p class="d-inline-block  mt-1 mx-auto">I have already an account </p>
+      <a href="" class="mx-auto" routerLink="../Login"> Log in</a>
+    </div> 
+  </div>
+  <div>
+    <img src="../../../assets/images/sign up candles 2.jpg" class="rounded" style="height: 42rem" alt="">
+  </div>
+</form>        
+    
+   
+
+<!-- <div class="form-check mb-3">
+  <input class="form-check-input" type="checkbox" id="myCheck" name="remember" >
+  <label class="form-check-label" for="myCheck">remember me.</label>
+</div> -->

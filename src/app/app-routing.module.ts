@@ -10,6 +10,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { BestSellerComponent } from './components/best-seller/best-seller.component';
 import { ProdDetailsComponent } from './components/prod-details/prod-details.component';
 import { CatDetailsComponent } from './components/cat-details/cat-details.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 const routes: Routes = [
   {path:'',component:MainLayoutComponent,children:[
@@ -22,8 +23,8 @@ const routes: Routes = [
     {path:'Best Seller',component:BestSellerComponent,title:'Best seller Page'},
     {path:'ProductDetails/:prodId',component:ProdDetailsComponent,title:'Product Details Page'},
     {path:'CatDetails/:catId',component:CatDetailsComponent,title:'Categories Details Page'},
-
-  ]}
+  ]},
+  {path:'Signup',component:SignUpComponent,title:'Sign up Page'}
 ];
 
 @NgModule({

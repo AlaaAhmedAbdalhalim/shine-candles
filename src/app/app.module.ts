@@ -15,6 +15,9 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductsComponent } from './components/products/products.component';
 import { ProdDetailsComponent } from './components/prod-details/prod-details.component';
 import { CatDetailsComponent } from './components/cat-details/cat-details.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,11 +33,14 @@ import { CatDetailsComponent } from './components/cat-details/cat-details.compon
     ProductListComponent,
     ProductsComponent,
     ProdDetailsComponent,
-    CatDetailsComponent
+    CatDetailsComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
