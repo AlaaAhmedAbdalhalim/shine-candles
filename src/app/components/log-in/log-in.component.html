@@ -1,0 +1,33 @@
+<div class=" d-flex flex-row justify-content-between rounded shadow-lg my-5 mx-5" >
+    <div class="mx-auto my-auto">
+      <h1 class="mx-auto" > Welcome back </h1>
+      <form class="needs-validation" #userForm="ngForm">
+        <div >
+            <input type="email" class="form-control mt-3" placeholder="Enter Email" #email="ngModel" [(ngModel)]="userLoginObj.email"
+            name="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required>
+            <div *ngIf="email.invalid && (email.touched || email.dirty) || isFormSubmitted" class="text-danger">
+              <span *ngIf="email.errors?.['required']">Please fill out this field.</span>
+              <span *ngIf="email.errors?.['pattern']">Invalid email address</span>
+            </div>
+          </div>
+          <div >
+            <input type="password" class="form-control mt-3" id="pwd" placeholder="Enter password"  #password="ngModel" 
+            [(ngModel)]="userLoginObj.password" name="password" minlength="10" required>
+            <div *ngIf="password.invalid && (password.touched || password.dirty) || isFormSubmitted" class="text-danger">
+              <span *ngIf="password.errors?.['required']">Please fill out this field.</span>
+              <span *ngIf="password.errors?.['minlength']">Must be 10-20 characters long.</span>
+            </div>
+          </div>
+        <input class="form-check-input  mb-2 me-1" type="checkbox" value="" id="remember me">
+        <label class="form-check-label mb-2" for="remember me">
+          remember me
+        </label>
+      <button class="d-block mx-auto btn btn-primary" type="button" (click)="login(email,password)"  [disabled]="!userForm.form.valid"> Log in  </button>
+      </form>
+      <p class="d-inline-block  mt-1 mx-auto">Dosen't have an account </p>
+      <a href="" class="mx-auto" routerLink="../Signup"> Sign up </a>
+    </div>    
+    <div>
+      <img src="../../../assets/images/sign up candles 2.jpg" class="rounded"  style="height: 42rem"alt="">
+    </div>
+</div>

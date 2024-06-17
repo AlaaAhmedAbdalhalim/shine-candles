@@ -18,6 +18,7 @@ import { CatDetailsComponent } from './components/cat-details/cat-details.compon
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
+import { LogInComponent } from './components/log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FormsModule, NgForm } from '@angular/forms';
     ProductsComponent,
     ProdDetailsComponent,
     CatDetailsComponent,
-    SignUpComponent
+    SignUpComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { BestSellerComponent } from './components/best-seller/best-seller.compon
 import { ProdDetailsComponent } from './components/prod-details/prod-details.component';
 import { CatDetailsComponent } from './components/cat-details/cat-details.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LogInComponent } from './components/log-in/log-in.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
     {path:'CatDetails/:catId',component:CatDetailsComponent,title:'Categories Details Page'},
   ]},
   {path:'Signup',component:SignUpComponent,title:'Sign up Page'},
+  {path:'Login',component:LogInComponent,title:'Login Page'}
 
 ];
 
