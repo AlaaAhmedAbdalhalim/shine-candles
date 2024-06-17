@@ -12,6 +12,7 @@ import { ProdDetailsComponent } from './components/prod-details/prod-details.com
 import { CatDetailsComponent } from './components/cat-details/cat-details.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 
+
 const routes: Routes = [
   {path:'',component:MainLayoutComponent,children:[
     {path:'',redirectTo:'/Home',pathMatch:'full'},
@@ -24,7 +25,8 @@ const routes: Routes = [
     {path:'ProductDetails/:prodId',component:ProdDetailsComponent,title:'Product Details Page'},
     {path:'CatDetails/:catId',component:CatDetailsComponent,title:'Categories Details Page'},
   ]},
-  {path:'Signup',component:SignUpComponent,title:'Sign up Page'}
+  {path:'Signup',component:SignUpComponent,title:'Sign up Page'},
+
 ];
 
 @NgModule({

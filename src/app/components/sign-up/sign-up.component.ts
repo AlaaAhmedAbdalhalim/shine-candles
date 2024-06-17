@@ -32,30 +32,5 @@ export class SignUpComponent {
     const formvalue=form.value;
     console.log(formvalue);
   }
-  /* signupForm: FormGroup; // Declare signupForm property
-
-  constructor ( private router :Router,
-    private formBuilder: FormBuilder           
-  ) {
-    this.signupForm = this.formBuilder.group({
-      username: ['', Validators.required], // Add validators if needed
-      email: ['', Validators.required],
-      password: ['', Validators.required]
-    });
-  }
-  SIGNUP(EMAIL:String){
-    console.log(EMAIL);
-  }
-  
-  signup() {
-    // You can handle form submission logic here
-    // For example, navigate to another route
-    this.router.navigate(['/Home']);
-  }
-
-  onSubmit() {
-    // You can handle form submission logic here as well
-    // For example, navigate to another route
-    this.router.navigate(['/Home']);
-  } */
+ 
 }
