@@ -43,8 +43,8 @@
       </div>
       <p></p>
       <button type="button" class="btn btn-primary d-block mx-auto mt-3" 
-      (click)="submitForm(userForm)" [disabled]="!userForm.form.valid">
-      Submit
+      (click)="submitForm(userForm)" [disabled]="!userForm.form.valid  && !isUserLogged ">
+      Sign up
     </button>
       <p class="d-inline-block  mt-1 mx-auto">I have already an account </p>
       <a href="" class="mx-auto" routerLink="../Login"> Log in</a>
@@ -57,7 +57,3 @@
     
    
 
-<!-- <div class="form-check mb-3">
-  <input class="form-check-input" type="checkbox" id="myCheck" name="remember" >
-  <label class="form-check-label" for="myCheck">remember me.</label>
-</div> -->

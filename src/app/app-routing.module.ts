@@ -12,6 +12,7 @@ import { ProdDetailsComponent } from './components/prod-details/prod-details.com
 import { CatDetailsComponent } from './components/cat-details/cat-details.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LogInComponent } from './components/log-in/log-in.component';
+import { authGuardGuard } from './Guards/auth-guard.guard';
 
 
 const routes: Routes = [
@@ -20,7 +21,7 @@ const routes: Routes = [
     {path:'Home',component:HomeComponent,title:'Home Page'},
     {path:'Categories',component:CategoriesComponent,title:'Categories Page'},
     {path:'Favorites',component:FavoritesComponent,title:'favorites Page'},
-    {path:'YourCart',component:CartComponent,title:'YourCart'},
+    {path:'YourCart',component:CartComponent,title:'YourCart' ,canActivate:[authGuardGuard]},
     {path:'Products',component:ProductListComponent,title:'Products Page'},
     {path:'Best Seller',component:BestSellerComponent,title:'Best seller Page'},
     {path:'ProductDetails/:prodId',component:ProdDetailsComponent,title:'Product Details Page'},

@@ -14,8 +14,10 @@
         </li>
     </ul>
         <a class="navbar-brand mx-auto" routerLink="Home" routerLinkActive="active-link">Shine Candles</a>
+    
     <div class="d-flex me-4">
         <a   routerLink="YourCart" routerLinkActive="active-link"><img src="../../../../assets/icons/shoppingBagIcon.svg" style="width: 2.3rem;" class="me-3" alt="shopping Bag Icon SVG"></a>
-        <button type="button" class="btn btn-outline-primary" routerLink="Signup" >Sign up</button>
+        <button type="button" class="btn btn-outline-primary" routerLink="Signup" *ngIf="!isUserLogged" >Sign up</button>
+        <button class="d-block mx-auto btn btn-primary" type="button" (click)="logout()"  *ngIf="isUserLogged"> Log out  </button>
     </div>
 </nav>

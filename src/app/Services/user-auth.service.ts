@@ -5,26 +5,34 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class UserAuthService {
-  private isloggedSubject :BehaviorSubject <boolean>;
-  constructor() { 
-    this.isloggedSubject=new BehaviorSubject <boolean>(false);
-  }
-  logIn(userName:string,password:string){
-    //call login api , and get access token
-  localStorage.setItem("userName",userName);
-  localStorage.setItem("password",password);
-  this.isloggedSubject.next(true);
-  }
-  logOut(){
-    localStorage.removeItem("token");
-  this.isloggedSubject.next(false);
 
+  private isloggedSubject=new BehaviorSubject <boolean>(false);
+  currentAuthStatus = this.isloggedSubject.asObservable();
+  constructor() {
   }
   get isUserLogged():boolean
   {
-    return (localStorage.getItem("token"))?true :false;
+    return localStorage.getItem("userName")?true :false;
   }
   getLoggedStatus(){
     return this.isloggedSubject;
+  }
+  signUp(userName:string,password:string){
+   /*  localStorage.setItem("userName",JSON.stringify(userName));
+    localStorage.setItem("password",JSON.stringify(password)); */
+    this.isloggedSubject.next(true);
+  }
+  logIn(){
+    this.isloggedSubject.next(true);
+  }
+  
+  remember(userName:string,password:string){
+    localStorage.setItem("userName",JSON.stringify(userName));
+    localStorage.setItem("password",JSON.stringify(password));
+  }
+  logOut(){
+    alert("are you sure");
+    localStorage.removeItem("userName");
+  this.isloggedSubject.next(false);
   }
 }

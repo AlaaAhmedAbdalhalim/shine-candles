@@ -18,12 +18,12 @@
               <span *ngIf="password.errors?.['minlength']">Must be 10-20 characters long.</span>
             </div>
           </div>
-        <input class="form-check-input  mb-2 me-1" type="checkbox" value="" id="remember me">
-        <label class="form-check-label mb-2" for="remember me">
-          remember me
-        </label>
-      <button class="d-block mx-auto btn btn-primary" type="button" (click)="login(email,password)"  [disabled]="!userForm.form.valid"> Log in  </button>
-      </form>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="myCheck" name="remember" (click)="remember()" >
+            <label class="form-check-label" for="myCheck">remember me.</label>
+          </div> 
+      <button class="d-block mx-auto btn btn-primary" type="button" (click)="login()"  [disabled]="!userForm.form.valid && !isUserLogged"> Log in  </button>
+    </form>
       <p class="d-inline-block  mt-1 mx-auto">Dosen't have an account </p>
       <a href="" class="mx-auto" routerLink="../Signup"> Sign up </a>
     </div>    
