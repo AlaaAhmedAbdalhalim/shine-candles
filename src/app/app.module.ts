@@ -10,7 +10,6 @@ import { MainLayoutComponent } from './components/main-layout/main-layout.compon
 import { BestSellerComponent } from './components/best-seller/best-seller.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
-import { CartComponent } from './components/cart/cart.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProdDetailsComponent } from './components/prod-details/prod-details.component';
@@ -19,6 +18,9 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LogInComponent } from './components/log-in/log-in.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { BestProductsComponent } from './components/best-products/best-products.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,15 @@ import { LogInComponent } from './components/log-in/log-in.component';
     BestSellerComponent,
     CategoriesComponent,
     FavoritesComponent,
-    CartComponent,
     ProductListComponent,
     ProductsComponent,
     ProdDetailsComponent,
     CatDetailsComponent,
     SignUpComponent,
-    LogInComponent
+    LogInComponent,
+    ProfileComponent,
+    UserProfileComponent,
+    BestProductsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Products } from '../../models/products';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../Services/product.service';
 import { FavouriteService } from '../../Services/favourite.service';
 
@@ -10,12 +10,14 @@ import { FavouriteService } from '../../Services/favourite.service';
   styleUrl: './cat-details.component.css'
 })
 export class CatDetailsComponent implements OnInit{
+  inputValue :number = 0;
   catDetailsId !: number;
-  prodDetails: Products[] = [];
+  prodDetails: Products[]|undefined = undefined;
   source: string = '../../../../assets/icons/favoriteIcon.svg';
   CategoryName: string;
   constructor(private router: ActivatedRoute,
     private product: ProductService,
+    private Router: Router,
     private favService: FavouriteService) {
     this.CategoryName = this.product.getCatName(this.catDetailsId);
   }
@@ -29,6 +31,7 @@ export class CatDetailsComponent implements OnInit{
   filterProductsByCategoryId(catDetailsId: number): void {
     const filteredProducts = this.product.getProdsByCatId(catDetailsId);
     this.prodDetails = filteredProducts;
+    console.log(this.prodDetails);
   }
 
   addToFavourite(prodId: number) {
@@ -44,5 +47,9 @@ export class CatDetailsComponent implements OnInit{
   }
   isFavourite(prodid: number): boolean {
     return this.favService.isFavourite(prodid);
+  }
+
+  openDetails(prodId :number){
+    this.Router.navigate(['ProductDetails',prodId]);
   }
 }

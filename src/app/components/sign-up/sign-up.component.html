@@ -1,4 +1,5 @@
-<form class=" d-flex flex-row  justify-content-between rounded shadow-lg my-5 mx-5 needs-validation"  #userForm="ngForm">
+<form class=" d-flex flex-row  justify-content-between rounded shadow-lg my-5 mx-5 needs-validation"  #userForm="ngForm"
+>
   <div class="mx-auto my-auto"> 
     <h1 class="mx-auto"> Hello there.</h1>
     <p class="text-secondary"> you need an account to continue </p>
@@ -41,13 +42,12 @@
         <input type="text" class="form-control mt-3"  placeholder="Enter Your State" #state="ngModel" [(ngModel)]="userObj.state"
         name="state" >
       </div>
-      <p></p>
       <button type="button" class="btn btn-primary d-block mx-auto mt-3" 
-      (click)="submitForm(userForm)" [disabled]="!userForm.form.valid  && !isUserLogged ">
+      (click)="submitForm()" [disabled]="!userForm.form.valid  && !isUserLogged ">
       Sign up
     </button>
       <p class="d-inline-block  mt-1 mx-auto">I have already an account </p>
-      <a href="" class="mx-auto" routerLink="../Login"> Log in</a>
+      <a href="" class="mx-auto  p-color fw-bold" routerLink="../Login"> Log in</a>
     </div> 
   </div>
   <div>

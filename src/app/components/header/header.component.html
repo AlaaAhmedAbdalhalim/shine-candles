@@ -1,23 +1,26 @@
 <nav class="navbar navbar-expand-lg fixed-top bg-white  ">
     <ul class="navbar-nav  mb-4 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link" routerLink='Products' routerLinkActive="active-link">Products</a>
-            </li>
+            <a class="nav-link" routerLink='Profile' routerLinkActive="active-link" *ngIf="isUserLogged">Profile</a>
+        </li>
         <li class="nav-item">
-        <a class="nav-link" routerLink='Best Seller' routerLinkActive="active-link">Bestsellers</a>
+            <a class="nav-link" routerLink='Products' routerLinkActive="active-link">Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink='Best Seller' routerLinkActive="active-link">Bestsellers</a>
         </li>
         <li class="nav-item ">
-        <a class="nav-link"  routerLink="Categories" routerLinkActive="active-link">Categories</a>
+            <a class="nav-link"  routerLink="Categories" routerLinkActive="active-link">Categories</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link"  routerLink="Favorites" routerLinkActive="active-link" >Favourites</a>
+            <a class="nav-link"  routerLink="Favorites" routerLinkActive="active-link" >Favourites</a>
         </li>
     </ul>
         <a class="navbar-brand mx-auto" routerLink="Home" routerLinkActive="active-link">Shine Candles</a>
     
     <div class="d-flex me-4">
-        <a   routerLink="YourCart" routerLinkActive="active-link"><img src="../../../../assets/icons/shoppingBagIcon.svg" style="width: 2.3rem;" class="me-3" alt="shopping Bag Icon SVG"></a>
+        <a   routerLink="YourCart" routerLinkActive="active-link"><img src="../../../../assets/icons/shoppingBagIcon.svg" style="width: 2rem;" class="me-3" alt="shopping Bag Icon SVG"></a>
         <button type="button" class="btn btn-outline-primary" routerLink="Signup" *ngIf="!isUserLogged" >Sign up</button>
-        <button class="d-block mx-auto btn btn-primary" type="button" (click)="logout()"  *ngIf="isUserLogged"> Log out  </button>
+        <button class=" mx-auto btn btn-primary" *ngIf="isUserLogged" type="button" (click)="logout()"  > logout  </button>
     </div>
 </nav>

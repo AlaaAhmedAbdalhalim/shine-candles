@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Products } from '../models/products';
 import { Categories } from '../models/categories';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,28 +18,28 @@ export class ProductService {
                    ,price:500,offer:'70% off',quantity:4,categoryId: 2, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:0},
                    
                    { id:3, name:'Coffee Candle',img:'../../../../../assets/images/Coffe Candle.jpg',Description:'A Coffee Candle is a scented candle infused with the warm, spicy fragrance of Coffee, evoking cozy memories of holiday baking and seasonal festivities. '
-                   ,price:700,offer:'70% off',quantity:1,categoryId: 2, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:0},
+                   ,price:700,offer:'70% off',quantity:1,categoryId: 2, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:1},
 
                    { id:4, name:'lemon candle',img:'../../../../../assets/images/lemon candle.jpg',Description:'A lemon candle is a scented candle infused with the warm, spicy fragrance of Lemon , evoking cozy memories of holiday baking and seasonal festivities. '
-                   ,price:450,offer:'20% off',quantity:1,categoryId: 2, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:0},
+                   ,price:450,offer:'20% off',quantity:1,categoryId: 2, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:8},
 
                    { id:5, name:'bubbles Candle',img:'../../../../../assets/images/bubbleCandle.jpg',Description:'A Bubbles Candle is a whimsical candle designed to mimic the effervescent beauty of bubbles, typically featuring a translucent wax body with shimmering accents that catch the light.'
                    ,price:200,offer:'20% off',quantity:3,categoryId: 3, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:0},
                    
                    { id:6, name:'Wick Timmer',img:'../../../../../assets/images/wickTimmer.jpg',Description:' A wick timer for a candle is a device designed to regulate the burning time of a candles wick.'
-                   ,price:250,offer:'Buy one Get One',quantity:2,categoryId: 4, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:0},
+                   ,price:250,offer:'Buy one Get One',quantity:2,categoryId: 4, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:4},
                    
                    { id:7, name:'Wick Dipper',img:'../../../../../assets/images/wickDipper.jpg',Description:'A wick dipper for candles is a specialized tool used to extinguish candles'
                    ,price:300,offer:'',quantity:1,categoryId: 5, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:0},
                    
                    { id:8, name:'Candle Snuffer',img:'../../../../../assets/images/candleSnuffer.jpg',Description:'A candle snuffer is a tool designed to safely extinguish candles to minimize wax splatter.'
-                   ,price:350,offer:'',quantity:0,categoryId: 6, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:0},
+                   ,price:350,offer:'',quantity:0,categoryId: 6, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:2},
                    
                    { id:9, name:'Candle Lighter',img:'../../../../../assets/images/candleLighter.jpg',Description:'A candle lighter is a long-handled device specifically designed for lighting candles safely and conveniently'
                    ,price:400,offer:'',quantity:3,categoryId: 7, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:0},
                    
                    { id:10, name:'Lavander Candle',img:'../../../../../assets/images/Lavander Candle.jpg',Description:' Lavender Candle is a scented candle infused with the soothing and aromatic fragrance of lavender essential oil and Its calming scent'
-                   ,price:400,offer:'Buy one Get One',quantity:5,categoryId:2,favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:0}
+                   ,price:400,offer:'Buy one Get One',quantity:5,categoryId:2,favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:5}
                   ]
 
 
@@ -64,15 +65,29 @@ export class ProductService {
     const catName = this.catList.find(cat => cat.catid ==catId );
     return catName;
   }
-  findFavProds(prodsIds:number[]) :Products []{
-    return this.prodList.filter (obj => prodsIds.includes(obj.id))
+  findFavProds(prodsIds:number[]) : Observable<any>{
+    return of(this.prodList.filter (obj => prodsIds.includes(obj.id)))
    }
   getProdById(Prodid: number): Products | undefined {
-    return this.prodList.find(prod => prod.id == Prodid);
-  }
+    return this.prodList.find(prod => prod.id == Prodid) ;
+
+    }
+  
   getProdsByCatId(catId: number): Products[]  
   {
     const filteredProducts = this.prodList.filter(prod => prod.categoryId === catId);
     return filteredProducts;
+  }
+  getBestSellers(): Products[] {
+    const sortedProducts = this.prodList.sort((a, b) => b.soldCount - a.soldCount);
+    const top4Products = sortedProducts.slice(0, 8);
+ 
+    return top4Products ;
+  }
+  getSomeBestSellers(): Products[]{
+    const sortedProducts = this.prodList.sort((a, b) => b.soldCount - a.soldCount);
+    const top4Products = sortedProducts.slice(0, 4);
+ 
+    return top4Products ;
   }
 }

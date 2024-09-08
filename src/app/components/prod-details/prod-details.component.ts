@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../Services/product.service';
 import { FavouriteService } from '../../Services/favourite.service';
 
+
 @Component({
   selector: 'app-prod-details',
   templateUrl: './prod-details.component.html',
@@ -14,26 +15,20 @@ export class ProdDetailsComponent {
   inputValue :number = 0;
   prodDetails :Products |undefined = undefined;
   sharedValue: any;
-
-
   
   constructor (private activatedRouter : ActivatedRoute,
                private product : ProductService,
                private router : Router,
-               private favService :FavouriteService)        /* private  sharedService: ProductServiceService */
+               private favService :FavouriteService )       
         
 {
     this.ProdDetailsId = Number(this.activatedRouter.snapshot.paramMap.get('prodId') );
     this.prodDetails = this.product.getProdById(this.ProdDetailsId);
   }
-/*   ngOnInit() {
-    this.sharedService.sharedValue$.subscribe(value => {
-      this.sharedValue = value;
-    });
-  } */
-  /* Buy(selectedcount:any,ProdDetailsId:any){
-    this.product.sharedData =selectedcount;
-    this.router.navigate(['../YourCart']);
+/* 
+  Buy(selectedcount:any,ProdDetailsId:any){
+    this.CartService.addToCart(ProdDetailsId,selectedcount);
+   this.router.navigate(["/YourCart"]);
   } */
   decrement(){
     if(this.inputValue>0)

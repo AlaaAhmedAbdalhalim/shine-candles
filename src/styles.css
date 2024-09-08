@@ -8,3 +8,16 @@
 {
     cursor: pointer !important;
 }
+.btn-primary {
+    background-color:var(--primary-color) ;
+    color: var(--secandary-color);
+    border: none;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:visited ,.btn-primary:disabled {
+    border:solid 1px var(--primary-color)  ;
+    color: var(--primary-color);
+    background-color: var(--secandary-color);
+}
+.p-color{
+    color: var(--primary-color);
+}

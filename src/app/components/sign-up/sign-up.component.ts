@@ -15,8 +15,9 @@ export class SignUpComponent implements OnInit {
   isUserLogged :boolean;
   userObj : any =
   {
+   
     firstName: '',
-    lasstName: '',
+    lastName: '',
     email: '',
     password: '',
     city: '',
@@ -32,10 +33,11 @@ export class SignUpComponent implements OnInit {
       this.isUserLogged = status;
   })
 }
-  submitForm(form:NgForm){
-    this.isFormSubmitted=true;
-    this.userAuth.signUp(this.userObj.email,this.userObj.password);
+  submitForm(){
+     this.isFormSubmitted=true;
+     this.userAuth.setCurrentUserEmail(this.userObj.email);
+    this.userAuth.signUp(this.userObj); 
     this.router.navigate(['/Home']);
-  }
+ }
  
 }

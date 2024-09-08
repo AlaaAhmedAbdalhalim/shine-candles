@@ -1,1 +1,14 @@
-<p>best-seller works!</p>
+<div class="row row-cols-1  g-4">
+    <div class="card shadow-lg mb-3 me-5  " style=' width: 18rem'>
+        <img [src]='[Bestproduct?.img]' class="card-img-top img-fluid  mx-auto mt-3 shadow  rounded position-relative  pe-auto"
+            style='width:16rem ; height:16rem' [alt]='[Bestproduct?.name]' (click)="openDetails(Bestproduct!.id)">
+        <a (click)="addToFavourite(Bestproduct!.id)" class="pe-auto">
+            <img [src]='Bestproduct?.favStatus' width='25rem' alt="Favourite Icon" class="position-absolute  icon">
+        </a>
+        <div class="card-body">
+            <h5 class="card-text d-inline-block"> {{Bestproduct?.name}}</h5>
+            <p class="fw-bold  ps-3 text-success d-inline-block"> {{Bestproduct?.price}} EGP </p>
+            <p class="card-text text-danger fw-bold mb-0" *ngIf="Bestproduct?.offer!=''">Offer : {{Bestproduct?.offer}}</p>
+        </div>
+    </div>
+</div>

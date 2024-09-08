@@ -24,13 +24,14 @@ export class LogInComponent implements OnInit {
   })
   }
   login(){
-    this.userAuth.logIn();
-    this.router.navigate(['../Home']);
+    this.userAuth.setCurrentUserEmail(this.userLoginObj.email);
+    this.userAuth.logIn(this.userLoginObj!.email);
+   
   }
-  remember()
+ /*  remember()
   {
-    this.userAuth.remember(this.userLoginObj.email,this.userLoginObj.password);
-  }
+   // this.userAuth.remember(this.userLoginObj.email,this.userLoginObj.password);
+  } */
 
  
 }

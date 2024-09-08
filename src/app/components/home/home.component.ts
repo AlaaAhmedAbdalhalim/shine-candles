@@ -7,12 +7,17 @@ import { ProductService } from '../../Services/product.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   featuredProducts: Products[] | undefined;
-  constructor(private ProductService :ProductService){ }
+  bestSellerProducts: Products[] | undefined;
+
+  constructor(private ProductService: ProductService
+
+  ) { }
 
   ngOnInit(): void {
-    this.featuredProducts=this.ProductService.getSomeProducts();
+    this.featuredProducts = this.ProductService.getSomeProducts();
+    this.bestSellerProducts = this.ProductService.getSomeBestSellers();
   }
- 
+
 }

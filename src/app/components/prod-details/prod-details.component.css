@@ -2,10 +2,14 @@
     width: 50%;
 }
 .icon {
-    top: 7rem;
-    left: 22rem;
+  
+    top: 10rem;
+    left: 32rem;
 
 } 
 .mt-5{
 margin-top: 6rem !important ;
+}
+.ms-5{
+    margin-left: 8rem !important;
 }

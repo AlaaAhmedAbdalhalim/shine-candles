@@ -4,7 +4,7 @@
         <div class="d-flex ">
         <div>
             <img [src]='[item.img]'  class=" my-3 shadow  rounded position-relative pe-auto " 
-            style='width:12rem ; height:12rem' [alt]='[item.name]'>
+            style='width:12rem ; height:12rem' [alt]='[item.name]' (click)="openDetails(item!.id)">
             <a (click) ="addToFavourite(item!.id)" class="pe-auto"><img  [src]='item.favStatus'  width='25rem' alt="Favourite Icon"  class="position-absolute pe-auto  icon"> </a>
         </div>  
         <div class="card-body">
@@ -12,7 +12,6 @@
             <p class="fw-bold  ps-3 text-success d-inline-block" > {{item.price}}   EGP </p> 
             <p class="  w-40 mb-0   ms-4 text-body-secondary" > {{item.Description}} </p> 
             <p class="card-text text-danger fw-bold mb-0" *ngIf="item.offer!=''">Offer : {{item.offer}}</p>
-            <a href="#" class="btn btn-primary pe-auto">Add To Cart</a>
         </div>
     </div>
     </div>
