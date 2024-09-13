@@ -1,6 +1,6 @@
 <!-- Home Section -->
-<div class="row mt-5 mx-5">
-    <div class="col mt-5 ms-3">
+<div class=" d-inline d-md-flex row mt-5 mx-3">
+    <div class="col mt-5 ">
         <h1>Shine</h1>
         <h1 class="ms-5">Candles</h1>
         <p class=" w-40  mt-4  ms-4">Star Candle is an online store for candles of all different
@@ -11,10 +11,10 @@
         </p>
     </div>
     <div class="col">
-        <img src="../../../../../assets/images/browen candle 1.jpg" class="img-fluid rounded mt-5  me-1"
-            style="width: 20rem;" alt="candles Home Image">
-        <img src="../../../../../assets/images/browen candle 2.jpg" class=" secandImg img-fluid  rounded float-end "
-         style="width: 19rem;" alt="candles Home Image">
+        <img src="../../../../../assets/images/browen candle 1.jpg" class="firstImg img-fluid rounded d-none d-md-inline"
+          alt="candles Home Image">
+        <img src="../../../../../assets/images/browen candle 2.jpg" class=" secandImg img-fluid  rounded float-end  d-none d-xl-flex "
+         alt="candles Home Image">
     </div>
 </div>
 <!-- Peoducts Section -->
@@ -23,7 +23,7 @@
     <a href="" class="text-primary d-inline-block me-5" routerLink="/Products">View all </a>
 </div> 
 
- <div class="d-flex justify-content-between me-5 flex-wrap  mx-5 mt-3 ps-5 ">
+ <div class="d-flex justify-content-between  flex-wrap  mx-5 mt-3 ps-5 ">
     <div *ngFor="let product of featuredProducts">
         <app-products [product]="product"></app-products>
     </div>
@@ -33,7 +33,7 @@
     <h2 class="ms-5 d-inline-block ">BestSeller</h2>
     <a href="" class="text-primary d-inline-block me-5" routerLink="/Best Seller">View all </a>
 </div> 
-<div class="d-flex justify-content-between me-5 flex-wrap  mx-5 mt-3 ps-5 ">
+<div class="d-flex justify-content-between flex-wrap  mx-5 mt-3  ">
     <div *ngFor="let product of bestSellerProducts">
           <app-best-seller  [Bestproduct]="product" ></app-best-seller>
 

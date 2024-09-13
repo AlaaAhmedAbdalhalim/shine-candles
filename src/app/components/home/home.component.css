@@ -10,9 +10,38 @@ p{
     color:  var(--secondary-color);;
 }
 
-.ms-5{
-    margin-left: 6rem !important;
+.firstImg {
+    width: 20rem;
+    margin-top: 6rem ;
 }
-.secandImg{
+.secandImg {
     margin-top: 12rem !important;
+    width: 18rem;
 }
+@media (min-width: 768px) and (max-width: 991px) { 
+  
+    .firstImg {
+        margin-left: 4rem;
+        margin-top: 8rem;
+    }
+
+}
+@media (min-width: 992px) and (max-width: 1199px) { 
+  
+    .firstImg {
+        margin-left: 8rem;
+        margin-top: 8rem;
+    }
+   
+}
+
+@media (min-width: 1200px) and (max-width: 1300px) { 
+    .secandImg {
+        width: 16rem;
+    }
+    .firstImg {
+        width: 18rem;
+    }
+}
+
+  
