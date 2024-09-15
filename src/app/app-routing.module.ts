@@ -25,7 +25,6 @@ const routes: Routes = [
     {path:'ProductDetails/:prodId',component:ProdDetailsComponent,title:'Product Details Page'},
     {path:'Products',component:ProductListComponent,title:'Products Page'},
     {path:'Best Seller',component:BestProductsComponent,title:'Best seller Page'},
-   
     {path:'CatDetails/:catId',component:CatDetailsComponent,title:'Categories Details Page'},
      {path:'user-profile/:id',component:ProfileComponent,title:'Profile Page'}
   ]},
