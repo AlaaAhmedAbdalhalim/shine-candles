@@ -14,3 +14,6 @@
     color: var(--primary-color);
     font-weight: bold;
 }
+.collapse{
+    flex-grow : 0;
+}
