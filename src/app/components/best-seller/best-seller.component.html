@@ -1,9 +1,9 @@
 
-    <div class="card shadow-lg mb-3  " style=' width: 18rem'>
+    <div class="card shadow-lg mb-3">
         <img [src]='[Bestproduct?.img]' class="card-img-top img-fluid  mx-auto mt-3 shadow  rounded position-relative  pe-auto"
-            style='width:16rem ; height:16rem' [alt]='[Bestproduct?.name]' (click)="openDetails(Bestproduct!.id)">
+            [alt]='[Bestproduct?.name]' (click)="openDetails(Bestproduct!.id)">
         <a (click)="addToFavourite(Bestproduct!.id)" class="pe-auto">
-            <img [src]='Bestproduct?.favStatus' width='25rem' alt="Favourite Icon" class="position-absolute  icon">
+            <img [src]='Bestproduct?.favStatus'  alt="Favourite Icon" class="position-absolute  icon">
         </a>
         <div class="card-body">
             <h5 class="card-text d-inline-block"> {{Bestproduct?.name}}</h5>
