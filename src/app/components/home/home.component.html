@@ -1,6 +1,6 @@
 <!-- Home Section -->
 <div class=" d-inline d-md-flex row mt-5 mx-3">
-    <div class="col mt-5 ">
+    <div class="col mt-5 mx-auto">
         <h1>Shine</h1>
         <h1 class="ms-5">Candles</h1>
         <p class=" w-40  mt-4  ms-4">Star Candle is an online store for candles of all different
@@ -20,10 +20,10 @@
 <!-- Peoducts Section -->
 <div class="d-flex justify-content-between align-items-center  mt-5">
     <h2 class="ms-5 d-inline-block ">Our Products</h2>
-    <a href="" class="text-primary d-inline-block me-5" routerLink="/Products">View all </a>
+    <a class="text-primary d-inline-block me-5" routerLink="/Products">View all </a>
 </div> 
 
- <div class="d-flex justify-content-between  flex-wrap  mx-5 mt-3 ps-5 ">
+ <div class="d-flex   justify-content-center justify-content-sm-between  flex-wrap mx-4 mt-3  ">
     <div *ngFor="let product of featuredProducts">
         <app-products [product]="product"></app-products>
     </div>
@@ -31,7 +31,7 @@
  <!-- Best-sellers and Categories Sections  -->
  <div class="d-flex justify-content-between align-items-center  mt-5">
     <h2 class="ms-5 d-inline-block ">BestSeller</h2>
-    <a href="" class="text-primary d-inline-block me-5" routerLink="/Best Seller">View all </a>
+    <a class="text-primary d-inline-block me-5" routerLink="/Best Seller">View all </a>
 </div> 
 <div class="d-flex justify-content-between flex-wrap  mx-5 mt-3  ">
     <div *ngFor="let product of bestSellerProducts">

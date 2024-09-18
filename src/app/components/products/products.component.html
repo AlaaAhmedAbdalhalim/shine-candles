@@ -1,6 +1,6 @@
-<div class="card shadow-lg mb-3  " style=' width: 18rem'>
+<div class="card shadow-lg mb-3  " >
     <img [src]='[product?.img]' class="card-img-top img-fluid  mx-auto mt-3 shadow  rounded position-relative  pe-auto"
-        style='width:16rem ; height:16rem' [alt]='[product?.name]' (click)="openDetails(product!.id)" >
+         [alt]='[product?.name]' (click)="openDetails(product!.id)" >
     <a (click)="addToFavourite(product!.id)" class="pe-auto">
         <img [src]='product?.favStatus' width='25rem' alt="Favourite Icon" class="position-absolute  icon">
     </a>
