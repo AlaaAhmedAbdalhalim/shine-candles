@@ -9,3 +9,12 @@
     color: var(--primary-color);
     font-weight: bold;
 }
+@media (min-width: 320px) and (max-width: 425px) { 
+  
+    .noFavouriteImage{
+        width: 22rem;
+    }
+    .textColor{
+        font-size: 0.8rem;
+    }
+} 
