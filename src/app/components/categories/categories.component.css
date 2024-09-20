@@ -1,3 +1,21 @@
 .ms-5{
     margin-left: 6rem !important;
 }
+.card{
+    width: 11rem;
+}
+img{
+    width: 10rem;
+    height : 10rem;
+}
+@media (min-width:250px) and (max-width:383px) {
+    .card{
+        width: 9rem;
+    }
+    img{
+        width: 8rem;
+    }
+    h5{
+        font-size: 1rem;
+    }
+}
