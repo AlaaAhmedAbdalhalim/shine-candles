@@ -9,17 +9,3 @@
     width:16rem ;
      height:16rem;
 }
-@media (min-width: 576px) and (max-width: 678px) { 
-  
-    .card{
-        width: 14rem;
-    }
-    .card-img-top{
-        width:12rem;
-         height:12rem;
-    }
-    .icon{
-        width: 1.5rem;
-    }
-
-} 

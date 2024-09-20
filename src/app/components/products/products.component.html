@@ -5,7 +5,7 @@
         <img [src]='product?.favStatus' width='25rem' alt="Favourite Icon" class="position-absolute  icon">
     </a>
     <div class="card-body">
-        <h5 class="card-text d-inline-block"> {{product?.name}}</h5>
+        <h5 class="card-text d-inline-block" > {{product?.name}}</h5>
         <p class="fw-bold  ps-3 text-success d-inline-block"> {{product?.price}} EGP </p>
         <p class="card-text text-danger fw-bold mb-0" *ngIf="product?.offer!=''">Offer : {{product?.offer}}</p>
     </div>
