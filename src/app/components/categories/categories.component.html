@@ -1,5 +1,5 @@
 <!-- <div class="d-flex flex-column  justify-content-start mt-3" style="height: 100vh;"> -->
-    <div class=" d-flex flex-wrap justify-content-around mx-2 mx-md-5 " >
+    <div class=" d-flex flex-wrap justify-content-around mx-2 mx-md-5 mb-5" >
         <div class="card shadow-lg mb-4 " *ngFor="let item of catList"  (click)="openDetails(item.catid)" >   
             <img [src]="[item.catImg]" alt="Category Image" class="mx-auto my-2 rounded" >   
             <h5 class="card-text mx-auto my-2">  {{item.CategoryName}}</h5> 
