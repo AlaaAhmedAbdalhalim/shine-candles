@@ -2,3 +2,19 @@
     top:1.5rem;
     right:1.5rem;
 }
+.card{
+    width: 18rem;
+}
+.image{
+    width: 16rem; 
+    height: 16rem;
+}
+@media (min-width: 485px) and (max-width: 599px){
+    .card{
+        width: 15rem;
+    }
+    .image{
+        width: 14rem; 
+        height: 14rem;
+    }
+}
