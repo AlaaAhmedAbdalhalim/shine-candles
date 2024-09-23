@@ -1,9 +1,12 @@
 <div class="card shadow-lg mb-3  " >
-    <img [src]='[product?.img]' class="card-img-top img-fluid  mx-auto mt-3 shadow  rounded position-relative  pe-auto"
-         [alt]='[product?.name]' (click)="openDetails(product!.id)" >
-    <a (click)="addToFavourite(product!.id)" class="pe-auto">
-        <img [src]='product?.favStatus' width='25rem' alt="Favourite Icon" class="position-absolute  icon">
-    </a>
+    <div class="position-relative mt-3 mx-auto">
+        <img [src]="product?.img" class="card-img-top image  img-fluid  shadow rounded " [alt]="product?.name">
+
+        <a (click)="addToFavourite(product!.id)" class="pe-auto">
+            <img [src]="product?.favStatus" width='40rem' alt="Favourite Icon"
+                class="position-absolute top-0 end-0 px-2 py-3">
+        </a>
+    </div>    
     <div class="card-body">
         <h5 class="card-text d-inline-block" > {{product?.name}}</h5>
         <p class="fw-bold  ps-3 text-success d-inline-block"> {{product?.price}} EGP </p>

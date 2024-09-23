@@ -1,7 +1,4 @@
-.icon{
-    top:1.5rem;
-    right:1.5rem;
-}
+
 .card{
     width: 18rem;
 }
@@ -18,8 +15,4 @@
         width:12rem ;
      height:12rem;
     }
-    .icon{
-        width: 1.5rem;
-    }
-
 } 

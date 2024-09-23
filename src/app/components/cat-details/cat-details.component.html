@@ -1,11 +1,15 @@
-<div class="d-flex flex-wrap justify-content-evenly  mt-5 px-1">
+<div class="d-flex flex-wrap justify-content-center  mt-5 px-1">
   <h2 class="mt-5">{{CategoryName}}</h2>
   <div class="card shadow-lg mb-3 me-md-2 mt-5" *ngFor="let item of prodDetails">
-    <img src="{{ item.img }}" class="image card-img-top img-fluid mx-auto mt-3 shadow rounded position-relative pe-auto"
-      [alt]="item.name" (click)="openDetails(item!.id)">
-    <a class="pe-auto" (click)="addToFavourite(item!.id)">
-      <img src="{{ item.favStatus }}" width="25rem" alt="Favourite Icon" class="position-absolute icon pe-auto">
-    </a>
+    <div class="position-relative mt-3 mx-auto">
+      <img [src]="item?.img" class="card-img-top image  img-fluid  shadow rounded " 
+         [alt]="item?.name">
+  
+      <a (click)="addToFavourite(item!.id)" class="pe-auto">
+        <img [src]="item?.favStatus" width='40rem' alt="Favourite Icon" 
+             class="position-absolute top-0 end-0 px-2 py-3">
+      </a>
+    </div>
     <div class="card-body">
       <h5 class="card-text d-inline-block">{{ item.name }}</h5>
       <p class="fw-bold ps-3 text-success d-inline-block">{{ item.price }} EGP</p>

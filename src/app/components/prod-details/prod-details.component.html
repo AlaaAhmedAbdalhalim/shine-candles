@@ -1,26 +1,38 @@
+<div class="d-flex flex-sm-wrap justify-content-center mt-4">
 
-<div class=" d-flex flex-sm-wrap  justify-content-center mt-5" >
-    <img [src]='[prodDetails?.img]' class="card-img-top img-fluid my-5 mt-5shadow  rounded position-relative " 
-      style='width:22rem ' [alt]='[prodDetails?.name]'>
-      <a (click)="addToFavourite(prodDetails!.id)" class="pe-auto">
-         <img [src]='prodDetails?.favStatus' width='25rem' alt="Favourite Icon" class="position-absolute  icon">
-     </a>
-   
-<div class=" ms-3 mt-4 w-50 p-3 " >
-   <h5 class="card-text fs-1  ms-2 d-flex-inline ">  
-      {{prodDetails?.name}} 
-      <span class="fw-bold text-success fs-4  d-flex-inline"> {{prodDetails?.price}}   EGP </span>
-   </h5>    
-   <p class=" text-body-secondary w-75 p-3 "> {{prodDetails?.Description}} </p>
-   <div class="qty mt-1  ">
-        <label class="fs-5 me-3 rounded-start d-block" >Quantity : </label>
-        <button class="btn btn-sm  btn-outline-secondary ms-5" (click)="decrement()">-</button>
-        <input type="text" class="count btn btn-sm  btn-outline-secondary" [(ngModel)]="inputValue" min="0"  [max]="prodDetails?.quantity" name="qty" value="1">
-        <button class="btn btn-outline-secondary  btn-sm rounded-end" (click)="increment()">+</button> 
+  <div class="position-relative my-5">
+
+    <img [src]="prodDetails?.img" class="card-img-top img-fluid  shadow rounded" 
+         style="width:22rem;" [alt]="prodDetails?.name">
+    
+    <a (click)="addToFavourite(prodDetails!.id)" class="pe-auto">
+      <img [src]="prodDetails?.favStatus" width='45rem' alt="Favourite Icon" 
+           class="position-absolute top-0 end-0 px-2 py-3">
+    </a>
+  </div>
+
+   <div class="ms-3 mt-5 w-50 p-3">
+     <h5 class="card-text fs-1 ms-2 d-flex-inline">
+       {{prodDetails?.name}}
+       <span class="fw-bold text-success fs-4 d-flex-inline"> {{prodDetails?.price}} EGP </span>
+     </h5>
+     <p class="text-wrap text-body-secondary w-75 p-3"> {{prodDetails?.Description}} </p>
+ 
+     <div class="qty mt-1 mb-3">
+       <label class="fs-5 me-3 rounded-start">Quantity:</label>
+       <button class="btn btn-sm btn-outline-secondary" (click)="decrement()">-</button>
+       <input type="text" class="count btn btn-sm btn-outline-secondary" [(ngModel)]="inputValue" min="0"
+              [max]="prodDetails?.quantity" name="qty" value="1">
+       <button class="btn btn-outline-secondary btn-sm rounded-end" (click)="increment()">+</button>
+     </div>
+ 
+     <p class="card-text text-danger fw-bold fs-5" *ngIf="prodDetails?.offer!=''">
+       Offer: {{prodDetails?.offer}}
+     </p>
+     <p class="card-text text-danger fw-bold fs-5" *ngIf="prodDetails?.offer==''">
+       No Offers For This Product
+     </p>
+     <button class="btn btn-primary p-2 ms-5" type="submit" style="width: 15rem;">Add to Cart</button>
    </div>
-   <p class="card-text text-danger fw-bold  fs-5 mt-3"  *ngIf="prodDetails?.offer!=''">Offer : {{prodDetails?.offer}}</p>
-   <button  class="  btn btn-primary  w-25 p-2"  type="submit" style="width: 10rem;"  >Add to Cart</button> 
- <!--   (click)="Buy(inputValue,prodDetails?.id)" -->
-   </div>
-</div>                    
-                  
+ </div>
+ 
