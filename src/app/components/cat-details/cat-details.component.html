@@ -3,7 +3,7 @@
   <div class="card shadow-lg mb-3 me-md-2 mt-5" *ngFor="let item of prodDetails">
     <div class="position-relative mt-3 mx-auto">
       <img [src]="item?.img" class="card-img-top image  img-fluid  shadow rounded " 
-         [alt]="item?.name">
+         [alt]="item?.name" (click)="openDetails(item!.id)">
   
       <a (click)="addToFavourite(item!.id)" class="pe-auto">
         <img [src]="item?.favStatus" width='40rem' alt="Favourite Icon" 
