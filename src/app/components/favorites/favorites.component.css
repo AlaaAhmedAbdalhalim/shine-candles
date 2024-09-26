@@ -1,20 +1,26 @@
-.icon{
-    top:1.5rem;
-    right:1.5rem;
-}
-.w-50{
-    width: 40% !important;
-}
+
 .textColor{
     color: var(--primary-color);
     font-weight: bold;
 }
-@media (min-width: 320px) and (max-width: 425px) { 
-  
-    .noFavouriteImage{
-        width: 22rem;
+.card-img-top{
+    width:16rem ;
+     height:16rem;
+} 
+.text-body-secondary
+{
+    width: 15rem;
+}
+
+@media (min-width: 320px) and (max-width: 749px) { 
+   
+  /*   .card{
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
     }
     .textColor{
         font-size: 0.8rem;
-    }
-} 
+    } */
+    
+}  
