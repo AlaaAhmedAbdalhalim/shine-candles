@@ -17,7 +17,7 @@
 
     <div class="qty mt-1 mb-3">
       <label class="fs-5 me-3 rounded-start ">Quantity:</label>
-      <div class="mx-sm-4 ms-1 mx-md-0 d-block d-md-inline">
+      <div class="mx-4 mx-md-0 d-block d-md-inline ">
         <button class="btn btn-sm btn-outline-secondary" (click)="decrement()">-</button>
         <input type="text" class="count btn btn-sm  btn-outline-secondary" [(ngModel)]="inputValue" min="0"
           [max]="prodDetails?.quantity" name="qty" value="1">
@@ -31,6 +31,6 @@
     <p class="card-text text-danger fw-bold fs-5" *ngIf="prodDetails?.offer==''">
       No Offers For This Product
     </p>
-    <button class="btn btn-primary p-2 ms-sm-5 mb-1" type="submit" style="width: 15rem;">Add to Cart</button>
+    <button class="btn btn-primary p-2 ms-sm-5 mb-5 mx-auto mx-md-0" type="submit" style="width: 15rem;">Add to Cart</button>
   </div>
 </div>
