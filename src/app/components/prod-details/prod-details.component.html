@@ -22,15 +22,17 @@
         <input type="text" class="count btn btn-sm  btn-outline-secondary" [(ngModel)]="inputValue" min="0"
           [max]="prodDetails?.quantity" name="qty" value="1">
         <button class="btn btn-outline-secondary btn-sm rounded-end" (click)="increment()">+</button>
+  
+      </div>
     </div>
-</div>
-
     <p class="card-text text-danger fw-bold fs-5" *ngIf="prodDetails?.offer!=''">
       Offer: {{prodDetails?.offer}}
     </p>
     <p class="card-text text-danger fw-bold fs-5" *ngIf="prodDetails?.offer==''">
       No Offers For This Product
     </p>
-    <button class="btn btn-primary p-2 ms-sm-5 mb-5 mx-auto mx-md-0" type="submit" style="width: 15rem;">Add to Cart</button>
+    <button class="btn btn-primary p-2 ms-sm-5 mb-5 mx-auto mx-md-0" type="submit" style="width: 15rem;"
+      *ngIf="prodDetails?.quantity!=0" (click)="addToCart(prodDetails!.id,inputValue)" >Add to Cart</button>
+    <p class="text-danger  fw-bold fs-5 mb-5 " *ngIf="prodDetails?.quantity==0">Sold Out </p>
   </div>
 </div>

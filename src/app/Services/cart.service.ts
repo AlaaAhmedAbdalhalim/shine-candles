@@ -1,37 +1,47 @@
-/* import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ProductService } from './product.service';
-import { BehaviorSubject } from 'rxjs';
-
+import { CartItems } from '../models/cart-items';
+import { Products } from '../models/products';
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  private cartData = new BehaviorSubject<{ id: number, quantity: number, productDetails?: any }[]>([]);
-  currentCartData = this.cartData.asObservable();
+ 
+  private cartItems: any[] = [];
+  private cartItemsSubject = new BehaviorSubject<any[]>(this.cartItems);
+  cartItems$ = this.cartItemsSubject.asObservable();
 
   constructor(private productService: ProductService) {}
 
-  addToCart(id: number, quantity: number) {
-    const currentCart = this.cartData.getValue();
-    const itemIndex = currentCart.findIndex(item => item.id === id);
-  
-    if (itemIndex > -1) {
-      currentCart[itemIndex].quantity += quantity;
-      this.cartData.next(currentCart);
-    } else {
-      this.productService.getProdById(id)?.subscribe(productDetails => {
-        currentCart.push({ id, quantity, productDetails });
-        this.cartData.next(currentCart);
-      });
-    }
+  // تعديل الدالة لتستقبل الـ id والكمية
+  addToCart(productId: number, quantity: number) {
+    // جلب المنتج عن طريق الـ id من الـ productService
+    const product = this.productService.getProdById(productId);
+    
+    // إضافة المنتج للسلة مع الكمية
+    const cartItem = { ...product, quantity };
+    this.cartItems.push(cartItem);
+    
+    // تحديث الـ Observable
+    this.cartItemsSubject.next(this.cartItems);
   }
-  
 
   getCartItems() {
-    return this.cartData.asObservable();
+    return this.cartItems;
   }
 
-  clearCart() {
-    this.cartData.next([]);
+  removeFromCart(productId: number) {
+   
+    const itemIndex = this.cartItems.findIndex(item => item.id === productId);
+
+    if (itemIndex !== -1) {
+     
+      this.cartItems.splice(itemIndex, 1);
+      this.cartItemsSubject.next(this.cartItems); 
+    }
   }
-} */
+ 
+  }
+  
+  

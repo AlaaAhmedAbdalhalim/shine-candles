@@ -1,0 +1,59 @@
+import { Component, OnInit } from '@angular/core';
+import { CartService } from '../../Services/cart.service';
+import { Products } from '../../models/products';
+import { ProductService } from '../../Services/product.service';
+
+@Component({
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrl: './cart.component.css'
+})
+export class CartComponent implements OnInit {
+  inputValue :number=0;
+  cartItems: { id: number, quantity: number }[] = [];
+  cartProductsWithQuantities: { product: Products, quantity: number }[] = []; // Array to store product details with quantity
+  totalPrice: number = 0;
+
+  constructor(private cartService: CartService,
+              private productService: ProductService) {}
+
+  ngOnInit() {
+    this.cartService.cartItems$.subscribe(items => {
+      this.cartItems = items;
+      this.logCartProducts();
+      this.calculateTotalPrice();
+    });
+  }
+
+  private logCartProducts() {
+    this.cartProductsWithQuantities = []; 
+    this.cartItems.forEach(cartItem => {
+      const product = this.productService.getProdById(cartItem.id);
+      if (product) {
+        this.cartProductsWithQuantities.push({ product: product, quantity: cartItem.quantity });
+      }
+    });
+  }
+  decrement(index: number) {
+    if (this.cartProductsWithQuantities[index].quantity > 0) {
+      this.cartProductsWithQuantities[index].quantity--;
+    }
+  }
+
+  increment(index: number) {
+    if(this.cartProductsWithQuantities[index].quantity< this.cartProductsWithQuantities[index].product.quantity)
+      {
+        this.cartProductsWithQuantities[index].quantity++;
+  }
+}
+private calculateTotalPrice() {
+  this.totalPrice = this.cartProductsWithQuantities.reduce((sum, cartProduct) => {
+    return sum + (cartProduct.product.price * cartProduct.quantity);
+  }, 0);
+}
+remove(id : number)
+{
+    this.cartService.removeFromCart(id); 
+  
+}
+}

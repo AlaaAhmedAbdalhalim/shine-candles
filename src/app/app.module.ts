@@ -21,6 +21,7 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { BestProductsComponent } from './components/best-products/best-products.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { BestProductsComponent } from './components/best-products/best-products.
     LogInComponent,
     ProfileComponent,
     UserProfileComponent,
-    BestProductsComponent
+    BestProductsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

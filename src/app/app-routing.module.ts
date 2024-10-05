@@ -14,6 +14,7 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { authGuardGuard } from './Guards/auth-guard.guard';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BestProductsComponent } from './components/best-products/best-products.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
     {path:'Products',component:ProductListComponent,title:'Products Page'},
     {path:'Best Seller',component:BestProductsComponent,title:'Best seller Page'},
     {path:'CatDetails/:catId',component:CatDetailsComponent,title:'Categories Details Page'},
-     {path:'user-profile/:id',component:ProfileComponent,title:'Profile Page'}
+     {path:'user-profile/:id',component:ProfileComponent,title:'Profile Page'},
+     {path:'YourCart',component:CartComponent,title:'Cart Page'}
   ]},
   {path:'Signup',component:SignUpComponent,title:'Sign up Page'},
   {path:'Login',component:LogInComponent,title:'Login Page'}

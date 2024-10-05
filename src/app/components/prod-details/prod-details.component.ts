@@ -3,6 +3,7 @@ import { Products } from '../../models/products';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../Services/product.service';
 import { FavouriteService } from '../../Services/favourite.service';
+import { CartService } from '../../Services/cart.service';
 
 
 @Component({
@@ -19,17 +20,14 @@ export class ProdDetailsComponent {
   constructor (private activatedRouter : ActivatedRoute,
                private product : ProductService,
                private router : Router,
-               private favService :FavouriteService )       
+               private favService :FavouriteService,
+              private cartService: CartService )       
         
 {
     this.ProdDetailsId = Number(this.activatedRouter.snapshot.paramMap.get('prodId') );
     this.prodDetails = this.product.getProdById(this.ProdDetailsId);
   }
-/* 
-  Buy(selectedcount:any,ProdDetailsId:any){
-    this.CartService.addToCart(ProdDetailsId,selectedcount);
-   this.router.navigate(["/YourCart"]);
-  } */
+
   decrement(){
     if(this.inputValue>0)
     {
@@ -46,4 +44,8 @@ export class ProdDetailsComponent {
   addToFavourite(prodId: number) {
     this.favService.addToFavourite(prodId);
   }
+  addToCart(prodID:number,Quentity:number){
+     this.cartService.addToCart(prodID,Quentity);
+    this.router.navigate(["/YourCart"]);
+  } 
 }
