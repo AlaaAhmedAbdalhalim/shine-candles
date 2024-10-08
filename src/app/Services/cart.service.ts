@@ -14,16 +14,13 @@ export class CartService {
 
   constructor(private productService: ProductService) {}
 
-  // تعديل الدالة لتستقبل الـ id والكمية
   addToCart(productId: number, quantity: number) {
-    // جلب المنتج عن طريق الـ id من الـ productService
+   
     const product = this.productService.getProdById(productId);
     
-    // إضافة المنتج للسلة مع الكمية
     const cartItem = { ...product, quantity };
     this.cartItems.push(cartItem);
-    
-    // تحديث الـ Observable
+   
     this.cartItemsSubject.next(this.cartItems);
   }
 

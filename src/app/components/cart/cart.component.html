@@ -1,14 +1,14 @@
-<div class=" d-flex justify-content-evenly align-items-center mt-5 flex-column flex-sm-row mx-5 mx-lg-0"
+<div class=" d-flex justify-content-evenly align-items-center mt-5 flex-column flex-md-row mx-lg-0"
     *ngIf="cartProductsWithQuantities.length!=0">
-    <div>
-        <div class="d-flex ms-5 mt-5">
-            <p class="me-5">Product</p>
+    <div >
+        <div class="d-flex justify-content-around mt-5  w-75">
+            <p class="">Product</p>
             <p class="price">Price</p>
             <p class="quentity">Quentity</p>
             <p class="total">Total</p>
 
         </div>
-        <div class="card d-flex flex-md-row mb-5 ms-5 w-75 "
+        <div class="card d-flex flex-row mb-5 ms-5 w-75 "
             *ngFor="let item of cartProductsWithQuantities ; let i = index">
             <img [src]="item?.product?.img" class="card-img-top image my-2 ms-2 img-fluid shadow rounded"
                 [alt]="item?.product?.name">
@@ -16,26 +16,26 @@
                 <h5 class="card-text d-inline-block"> {{item.product.name}}</h5>
                 <p class="fw-bold mb-0 d-inline-block"> {{item.product.price}} EGP </p>
 
-                <div class="d-block d-md-inline w-25 ">
+                <div class="d-block d-md-inline">
                     <button class="btn btn-sm btn-outline-secondary" (click)="decrement(i)">-</button>
                     <input type="text" class="count btn btn-sm  btn-outline-secondary" min="0"
                         [max]="item?.product?.quantity" name="qty" [(ngModel)]="cartProductsWithQuantities[i].quantity">
                     <button class="btn btn-outline-secondary btn-sm rounded-end" (click)="increment(i)">+</button>
                 </div>
-                <p class="fw-bold  mb-0 text-success d-inline-block"> {{item.product.price
+                <p class="fw-bold  mb-0 text-success d-inline-block" > {{item.product.price
                     *cartProductsWithQuantities[i].quantity}} EGP </p>
                 <img src="../../../assets/icons/Cancel.svg" alt="Cancel Icon" style="width: 2rem;" (click)="remove(item.product.id)">
             </div>
         </div>
     </div>
 
-    <div class="card m-5 p-5" style="width: 20rem;">
+    <div class="card m-3 p-4" style="width: 20rem;">
         <h5 class="card-header text-center">Order Summary</h5>
         <div class="card-body">
 
-          <p class="card-text">subTotal <span class="me-2">{{this.totalPrice}}</span></p>
+          <p class="card-text">subTotal <span class="me-2">{{ calculateSubtotal()}}</span></p>
           <p class="card-text">Shipping <span class="me-2">40</span></p>
-          <p class="card-text">Total <span class="mx-auto">{{this.totalPrice+40}}</span></p>
+          <p class="card-text">Total <span class="mx-auto">{{calculateSubtotal()+40}}</span></p>
           
         </div>
         <a href="#" class="btn btn-primary card-footer">Checkout</a>

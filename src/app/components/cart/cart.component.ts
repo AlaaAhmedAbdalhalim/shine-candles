@@ -21,7 +21,7 @@ export class CartComponent implements OnInit {
     this.cartService.cartItems$.subscribe(items => {
       this.cartItems = items;
       this.logCartProducts();
-      this.calculateTotalPrice();
+
     });
   }
 
@@ -46,11 +46,14 @@ export class CartComponent implements OnInit {
         this.cartProductsWithQuantities[index].quantity++;
   }
 }
-private calculateTotalPrice() {
-  this.totalPrice = this.cartProductsWithQuantities.reduce((sum, cartProduct) => {
-    return sum + (cartProduct.product.price * cartProduct.quantity);
-  }, 0);
+calculateSubtotal(): number {
+  let subtotal = 0;
+  this.cartProductsWithQuantities.forEach(item => {
+      subtotal += item.product.price * item.quantity;
+  });
+  return subtotal;
 }
+
 remove(id : number)
 {
     this.cartService.removeFromCart(id); 

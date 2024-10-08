@@ -4,12 +4,9 @@
 .count{
     width: 20%;
 }
-.price{
-    margin-left: 11rem;
-}
-.quentity{
-    margin-left: 7rem;
-}
-.total{
-    margin-left: 7rem;
+@media (min-width:320px) and (max-width:767px)
+{
+    .w-75{
+        width: 100% !important ;
+    }
 }
