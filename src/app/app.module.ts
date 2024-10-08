@@ -18,8 +18,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LogInComponent } from './components/log-in/log-in.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
+
 import { BestProductsComponent } from './components/best-products/best-products.component';
 import { CartComponent } from './components/cart/cart.component';
 
@@ -39,8 +38,6 @@ import { CartComponent } from './components/cart/cart.component';
     CatDetailsComponent,
     SignUpComponent,
     LogInComponent,
-    ProfileComponent,
-    UserProfileComponent,
     BestProductsComponent,
     CartComponent
   ],

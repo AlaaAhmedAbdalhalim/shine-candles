@@ -25,7 +25,8 @@ export class LogInComponent implements OnInit {
   }
   login(){
     this.userAuth.setCurrentUserEmail(this.userLoginObj.email);
-    this.userAuth.logIn(this.userLoginObj!.email);
+    this.userAuth.logIn(this.userLoginObj.email ,this.userLoginObj.password);
+    console.log(this.userLoginObj.email ,this.userLoginObj.password )
    
   }
  /*  remember()

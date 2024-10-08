@@ -39,7 +39,10 @@ export class ProductService {
                    ,price:400,offer:'',quantity:3,categoryId: 7, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:0},
                    
                    { id:10, name:'Lavander Candle',img:'../../../../../assets/images/Lavander Candle.jpg',Description:' Lavender Candle is a scented candle infused with the soothing and aromatic fragrance of lavender essential oil and Its calming scent'
-                   ,price:400,offer:'Buy one Get One',quantity:5,categoryId:2,favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:5}
+                   ,price:400,offer:'Buy one Get One',quantity:5,categoryId:2,favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:5},
+
+                   { id:11, name:'Sea Candle',img:'../../../../../assets/images/Gel candles.jpg',Description:' Blue Sea Scented Candle. Reminiscent of crystal clear calm blue seas, white sands, and paradise islands.',
+                    price:420,offer:'',quantity:3,categoryId: 1, favStatus:'../../../../assets/icons/favoriteIcon.svg',soldCount:0},
                   ]
 
 

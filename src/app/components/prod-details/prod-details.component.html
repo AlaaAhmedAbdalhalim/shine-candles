@@ -15,7 +15,7 @@
     </h5>
     <p class="text-wrap text-body-secondary w-md-75 p-3"> {{prodDetails?.Description}} </p>
 
-    <div class="qty mt-1 mb-3">
+    <div class="qty mt-1 mb-3" *ngIf="prodDetails?.quantity!=0">
       <label class="fs-5 me-3 rounded-start ">Quantity:</label>
       <div class="mx-4 mx-md-0 d-block d-md-inline ">
         <button class="btn btn-sm btn-outline-secondary" (click)="decrement()">-</button>
@@ -32,7 +32,7 @@
       No Offers For This Product
     </p>
     <button class="btn btn-primary p-2 ms-sm-5 mb-5 mx-auto mx-md-0" type="submit" style="width: 15rem;"
-      *ngIf="prodDetails?.quantity!=0" (click)="addToCart(prodDetails!.id,inputValue)" >Add to Cart</button>
+      *ngIf="prodDetails?.quantity!=0" [disabled]="inputValue==0" (click)="addToCart(prodDetails!.id,inputValue)" >Add to Cart</button>
     <p class="text-danger  fw-bold fs-5 mb-5 " *ngIf="prodDetails?.quantity==0">Sold Out </p>
   </div>
 </div>

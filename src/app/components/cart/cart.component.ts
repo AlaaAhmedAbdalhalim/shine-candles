@@ -35,7 +35,7 @@ export class CartComponent implements OnInit {
     });
   }
   decrement(index: number) {
-    if (this.cartProductsWithQuantities[index].quantity > 0) {
+    if (this.cartProductsWithQuantities[index].quantity > 1) {
       this.cartProductsWithQuantities[index].quantity--;
     }
   }

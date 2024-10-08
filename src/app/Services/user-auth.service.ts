@@ -20,41 +20,51 @@ export class UserAuthService {
   currentAuthStatus = this.isloggedSubject.asObservable();
   private currentUserEmail: string | null = null;
 
-  constructor( private router : Router) {
+  constructor(private router: Router) {
     const storedUsersData = localStorage.getItem('usersData');
     if (storedUsersData) {
       this.usersData = JSON.parse(storedUsersData);
     }
   }
 
+
   saveUserData(userData: UserData): void {
     this.usersData.push(userData);
-    localStorage.setItem('usersData', JSON.stringify(this.usersData));
-  }
-
+    console.log('Current users data:', this.usersData); // Debug log
+    this.updateLocalStorage();
+}
   signUp(userObj: UserData): void {
-    this.saveUserData(userObj);
-    this.setCurrentUserEmail(userObj.email);
-    this.isloggedSubject.next(true);
+    const emailExists = this.usersData.some(user => user.email === userObj.email);
+
+    if (emailExists) {
+      console.error('Email already exists. Cannot sign up with this email.');
+      alert('This email is already registered. Please use a different email.');
+    } else {
+      this.saveUserData(userObj);
+      this.setCurrentUserEmail(userObj.email);
+      this.isloggedSubject.next(true);
+      this.router.navigate(['../Home']);
+    }
   }
 
-  logIn(email: string): void {
+  logIn(email: string, password: string): void {
 
-    const user = this.usersData.find(user => user.email === email);
+    const user = this.usersData.find(user => user.email === email && user.password === password);
+    console.log(this.usersData);
     if (user) {
       this.setCurrentUserEmail(email);
       this.isloggedSubject.next(true);
       this.router.navigate(['../Home']);
-    } else {
-      console.error('User not found');
+    } else if (this.usersData.find(user => user.email !== email))
+      alert('Invalid email . Please try again.');
+      else 
+        alert ('Invalid Password . Please try again.')
     }
-  }
+  
 
   logOut(): void {
     if (this.currentUserEmail) {
       if (confirm('Are you sure you want to log out?')) {
-        this.removeUserByEmail(this.currentUserEmail);
-        this.setCurrentUserEmail(null);
         this.isloggedSubject.next(false);
       }
     } else {

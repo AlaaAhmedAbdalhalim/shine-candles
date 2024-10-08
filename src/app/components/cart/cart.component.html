@@ -18,7 +18,7 @@
 
                 <div class="d-block d-md-inline">
                     <button class="btn btn-sm btn-outline-secondary" (click)="decrement(i)">-</button>
-                    <input type="text" class="count btn btn-sm  btn-outline-secondary" min="0"
+                    <input type="text" class="count btn btn-sm  btn-outline-secondary" min="1"
                         [max]="item?.product?.quantity" name="qty" [(ngModel)]="cartProductsWithQuantities[i].quantity">
                     <button class="btn btn-outline-secondary btn-sm rounded-end" (click)="increment(i)">+</button>
                 </div>
