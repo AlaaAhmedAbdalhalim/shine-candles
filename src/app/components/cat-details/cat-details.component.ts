@@ -3,6 +3,7 @@ import { Products } from '../../models/products';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../Services/product.service';
 import { FavouriteService } from '../../Services/favourite.service';
+import { UserAuthService } from '../../Services/user-auth.service';
 
 @Component({
   selector: 'app-cat-details',
@@ -18,7 +19,8 @@ export class CatDetailsComponent implements OnInit{
   constructor(private router: ActivatedRoute,
     private product: ProductService,
     private Router: Router,
-    private favService: FavouriteService) {
+    private favService: FavouriteService,
+  private userAuth :UserAuthService) {
     this.CategoryName = this.product.getCatName(this.catDetailsId);
   }
   ngOnInit(): void {
@@ -35,6 +37,8 @@ export class CatDetailsComponent implements OnInit{
   }
 
   addToFavourite(prodId: number) {
+    if(this.userAuth .isUserLogged)
+    {
     if (this.isFavourite(prodId)) {
       this.product.getProdById(prodId)!.favStatus = this.source;
       this.favService.removeFavourite(prodId);
@@ -44,6 +48,13 @@ export class CatDetailsComponent implements OnInit{
       this.product.getProdById(prodId)!.favStatus = '../../../../assets/icons/Favourite.svg';
       this.favService.addFavourite(prodId);
     }
+  }
+  else {
+    const userConfirmed = alert ("please Login First");
+    if (userConfirmed == undefined) { 
+      this.Router.navigate(['Login']);
+    }
+  }
   }
   isFavourite(prodid: number): boolean {
     return this.favService.isFavourite(prodid);

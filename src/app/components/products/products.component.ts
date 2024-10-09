@@ -3,6 +3,7 @@ import { Products } from '../../models/products';
 import { ProductService } from '../../Services/product.service';
 import { Router } from '@angular/router';
 import { FavouriteService } from '../../Services/favourite.service';
+import { UserAuthService } from '../../Services/user-auth.service';
 
 @Component({
   selector: 'app-products',
@@ -14,21 +15,30 @@ export class ProductsComponent {
   @Input() product: Products | undefined;
   displayproducts: Products[] | undefined;
   constructor(private productService: ProductService,
-              private favService: FavouriteService,
-              private router :Router)
-  {
+    private favService: FavouriteService,
+    private router: Router,
+    private userAuth: UserAuthService) {
 
   }
   ngOnInit(): void {
     this.displayproducts = this.productService.getAllProducts();
   }
   addToFavourite(prodId: number) {
-    this.favService.addToFavourite(prodId);
+    if (this.userAuth.isUserLogged)
+      this.favService.addToFavourite(prodId);
+
+    else {
+      const userConfirmed = alert("please Login First");
+      if (userConfirmed == undefined) {
+        this.router.navigate(['Login']);
+      }
+    }
+
   }
   isFavourite(prodid: number): boolean {
     return this.favService.isFavourite(prodid);
   }
-  openDetails(prodId :number){
-    this.router.navigate(['ProductDetails',prodId]);
+  openDetails(prodId: number) {
+    this.router.navigate(['ProductDetails', prodId]);
   }
 }

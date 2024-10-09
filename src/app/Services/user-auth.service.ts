@@ -49,13 +49,13 @@ export class UserAuthService {
 
   logIn(email: string, password: string): void {
 
-    const user = this.usersData.find(user => user.email === email && user.password === password);
-    console.log(this.usersData);
-    if (user) {
+    const userEmail = this.usersData.find(userEmail => userEmail.email === email );
+    const userPassword = this.usersData.find(userPassword => userPassword.password === password );
+    if (userEmail &&userPassword) {
       this.setCurrentUserEmail(email);
       this.isloggedSubject.next(true);
       this.router.navigate(['../Home']);
-    } else if (this.usersData.find(user => user.email !== email))
+    } else if (!userEmail)
       alert('Invalid email . Please try again.');
       else 
         alert ('Invalid Password . Please try again.')
@@ -70,8 +70,16 @@ export class UserAuthService {
     } else {
       console.error('No user is currently logged in');
     }
+    console.log(this.isloggedSubject)
   }
+  get isUserLogged(): boolean {
+    return this.isloggedSubject.getValue();
+  }
+  
 
+  getLoggedStatus() {
+    return this.isloggedSubject;
+  }
   removeUserByEmail(email: string): void {
     this.usersData = this.usersData.filter(user => user.email !== email);
     this.updateLocalStorage();
@@ -93,11 +101,5 @@ export class UserAuthService {
     return this.currentUserEmail;
   }
 
-  get isUserLogged(): boolean {
-    return this.currentUserEmail !== null;
-  }
-
-  getLoggedStatus() {
-    return this.isloggedSubject;
-  }
+ 
 }
