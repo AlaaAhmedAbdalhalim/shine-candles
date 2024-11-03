@@ -11,8 +11,13 @@ import { UserAuthService } from '../../Services/user-auth.service';
   styleUrl: './best-seller.component.css'
 })
 export class BestSellerComponent {
+  isDivVisible: boolean = false;
+  dynamicContent: string = 'This is dynamic content displayed on button click.';
   @Input() Bestproduct: Products | undefined;
   displayproducts: Products[] | undefined;
+  isAlertVisible = false;
+
+
   constructor(private productService: ProductService,
     private favService: FavouriteService,
     private router :Router,
@@ -30,10 +35,7 @@ addToFavourite(prodId: number) {
       this.favService.addToFavourite(prodId);
   }
   else {
-    const userConfirmed = alert ("please Login First");
-    if (userConfirmed == undefined) { 
-      this.router.navigate(['Login']);
-    }
+      this.isAlertVisible = true;
   }
   
 }
@@ -42,5 +44,8 @@ return this.favService.isFavourite(prodid);
 }
 openDetails(prodId :number){
 this.router.navigate(['ProductDetails',prodId]);
+}
+login(){
+  this.router.navigate(['Login']); 
 }
 }

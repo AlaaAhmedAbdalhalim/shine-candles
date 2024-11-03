@@ -21,3 +21,15 @@
 .p-color{
     color: var(--primary-color);
 }
+.card:hover{
+    transform: scale(1.1);
+ }
+ @keyframes ImgPush {
+    from{
+        transform: translateY(-90vh);
+    }
+    to{
+        transform: translateY(0);
+
+    }
+}

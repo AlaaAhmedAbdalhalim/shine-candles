@@ -1,3 +1,17 @@
+.cardImg{
+animation: cardImgPush 2s ease-in-out forwards;
+}
+.cardDetails{
+    animation: cardPush 2s ease-in-out forwards;
+}
+@keyframes cardImgPush {
+    from{transform: translateX(-100rem);}
+    to{transform: translateX(0);}
+}
+@keyframes cardPush {
+    from{transform: translateX(100rem);}
+    to{transform: translateX(0);}
+}
 @media (min-width:200px) and (max-width:703px) {
     .w-50{
     width: 75% !important;

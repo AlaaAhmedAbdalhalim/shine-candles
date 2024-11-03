@@ -4,6 +4,10 @@
 .count{
     width: 20%;
 }
+.noCartItems ,.textColor{
+    animation: ImgPush 2s ease-in-out  forwards;
+}
+
 @media (min-width:320px) and (max-width:767px)
 {
     .w-75{

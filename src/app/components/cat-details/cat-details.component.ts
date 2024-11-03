@@ -16,6 +16,7 @@ export class CatDetailsComponent implements OnInit{
   prodDetails: Products[]|undefined = undefined;
   source: string = '../../../../assets/icons/favoriteIcon.svg';
   CategoryName: string;
+  isAlertVisible=false;
   constructor(private router: ActivatedRoute,
     private product: ProductService,
     private Router: Router,
@@ -33,33 +34,21 @@ export class CatDetailsComponent implements OnInit{
   filterProductsByCategoryId(catDetailsId: number): void {
     const filteredProducts = this.product.getProdsByCatId(catDetailsId);
     this.prodDetails = filteredProducts;
-    console.log(this.prodDetails);
+
   }
 
   addToFavourite(prodId: number) {
-    if(this.userAuth .isUserLogged)
-    {
-    if (this.isFavourite(prodId)) {
-      this.product.getProdById(prodId)!.favStatus = this.source;
-      this.favService.removeFavourite(prodId);
-    }
+    if (this.userAuth.isUserLogged)
+      this.favService.addToFavourite(prodId);
 
     else {
-      this.product.getProdById(prodId)!.favStatus = '../../../../assets/icons/Favourite.svg';
-      this.favService.addFavourite(prodId);
+      this.isAlertVisible=true;
     }
-  }
-  else {
-    const userConfirmed = alert ("please Login First");
-    if (userConfirmed == undefined) { 
-      this.Router.navigate(['Login']);
-    }
-  }
+
   }
   isFavourite(prodid: number): boolean {
     return this.favService.isFavourite(prodid);
   }
-
   openDetails(prodId :number){
     this.Router.navigate(['ProductDetails',prodId]);
   }

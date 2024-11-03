@@ -21,6 +21,11 @@ import { LogInComponent } from './components/log-in/log-in.component';
 
 import { BestProductsComponent } from './components/best-products/best-products.component';
 import { CartComponent } from './components/cart/cart.component';
+import { PaypalButtonComponent } from './components/paypal-button/paypal-button.component';
+import { NgxPayPalModule } from 'ngx-paypal';
+import { NotFountComponent } from './components/not-fount/not-fount.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginAlertComponent } from './components/login-alert/login-alert.component';
 
 @NgModule({
   declarations: [
@@ -39,13 +44,19 @@ import { CartComponent } from './components/cart/cart.component';
     SignUpComponent,
     LogInComponent,
     BestProductsComponent,
-    CartComponent
+    CartComponent,
+    PaypalButtonComponent,
+    NotFountComponent,
+    LoginAlertComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    NgxPayPalModule,
+    BrowserAnimationsModule
+     
   ],
   providers: [],
   bootstrap: [AppComponent]

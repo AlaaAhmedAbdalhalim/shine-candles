@@ -15,6 +15,8 @@ import { authGuardGuard } from './Guards/auth-guard.guard';
 
 import { BestProductsComponent } from './components/best-products/best-products.component';
 import { CartComponent } from './components/cart/cart.component';
+import { PaypalButtonComponent } from './components/paypal-button/paypal-button.component';
+import { NotFountComponent } from './components/not-fount/not-fount.component';
 
 
 const routes: Routes = [
@@ -28,10 +30,12 @@ const routes: Routes = [
     {path:'Best Seller',component:BestProductsComponent,title:'Best seller Page'},
     {path:'CatDetails/:catId',component:CatDetailsComponent,title:'Categories Details Page'},
 
-     {path:'YourCart',component:CartComponent,title:'Cart Page'}
+     {path:'YourCart',component:CartComponent,title:'Cart Page'},
+     {path:'Checkout',component:PaypalButtonComponent,title:'Checkout Page'}
   ]},
   {path:'Signup',component:SignUpComponent,title:'Sign up Page'},
-  {path:'Login',component:LogInComponent,title:'Login Page'}
+  {path:'Login',component:LogInComponent,title:'Login Page'},
+  {path:'**',component:NotFountComponent,title:'Not Found Page'}
 
 ];
 

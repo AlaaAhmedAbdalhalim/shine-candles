@@ -1,6 +1,8 @@
 .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited, .btn-primary {
     background-color:var(--primary-color) !important;
     color: var(--secandary-color);
+    font-weight: bold;
+    
   
 }
 .btn-outline-primary {
@@ -12,8 +14,13 @@
 } 
 .active-link{
     color: var(--primary-color);
-    font-weight: bold;
+    
 }
+.nav-link:hover , .navbar-brand:hover {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
 .collapse{
     flex-grow : 0;
 }

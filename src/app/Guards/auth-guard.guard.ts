@@ -12,7 +12,6 @@ if(inject (UserAuthService).isUserLogged)
  }
  else
  {
-   alert ('you must login');
    inject(Router).navigate(['/Login']);
    return false;
  }

@@ -1,0 +1,10 @@
+<div class="alert-overlay" *ngIf="visible" >
+    <div class="alert-box w-50 p-4" @fadeSlide>
+      <h5>Warning</h5>
+      <p>You should Login First, Please click to Login Button </p>
+      <button (click)="close()" class="btn btn-secandary">Close</button>
+      <button (click)="Login()" class="btn btn-primary">Login</button>
+    </div>
+  </div>
+
+

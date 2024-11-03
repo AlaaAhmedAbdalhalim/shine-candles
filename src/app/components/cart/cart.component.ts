@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../Services/cart.service';
 import { Products } from '../../models/products';
 import { ProductService } from '../../Services/product.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -13,9 +14,10 @@ export class CartComponent implements OnInit {
   cartItems: { id: number, quantity: number }[] = [];
   cartProductsWithQuantities: { product: Products, quantity: number }[] = []; // Array to store product details with quantity
   totalPrice: number = 0;
-
+  CartTotal :number=0;
   constructor(private cartService: CartService,
-              private productService: ProductService) {}
+              private productService: ProductService,
+            private router : Router) {}
 
   ngOnInit() {
     this.cartService.cartItems$.subscribe(items => {
@@ -51,6 +53,7 @@ calculateSubtotal(): number {
   this.cartProductsWithQuantities.forEach(item => {
       subtotal += item.product.price * item.quantity;
   });
+  this.CartTotal=subtotal;
   return subtotal;
 }
 
@@ -58,5 +61,8 @@ remove(id : number)
 {
     this.cartService.removeFromCart(id); 
   
+}
+checkout(){
+  this.router.navigate(['Checkout']);
 }
 }

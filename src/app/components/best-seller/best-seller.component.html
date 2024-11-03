@@ -1,17 +1,19 @@
 <div class="card shadow-lg mb-3">
     <div class="position-relative mt-3 mx-auto">
-        <img [src]="Bestproduct?.img" class="card-img-top image  img-fluid  shadow rounded " 
-        [alt]="Bestproduct?.name"  (click)="openDetails(Bestproduct!.id)">
+        <img [src]="Bestproduct?.img" class="card-img-top image  img-fluid  shadow rounded " [alt]="Bestproduct?.name"
+            (click)="openDetails(Bestproduct!.id)">
 
         <a (click)="addToFavourite(Bestproduct!.id)" class="pe-auto">
             <img [src]="Bestproduct?.favStatus" width='40rem' alt="Favourite Icon"
                 class="position-absolute top-0 end-0 px-2 py-3">
         </a>
-    </div>    
-        <div class="card-body">
-            <h5 class="card-text d-inline-block"> {{Bestproduct?.name}}</h5>
-            <p class="fw-bold  ps-3 text-success d-inline-block"> {{Bestproduct?.price}} EGP </p>
-            <p class="card-text text-danger fw-bold mb-0" *ngIf="Bestproduct?.offer!=''">Offer : {{Bestproduct?.offer}}
-            </p>
-        </div>
     </div>
+    <div class="card-body">
+        <h5 class="card-text d-inline-block"> {{Bestproduct?.name}}</h5>
+        <p class="fw-bold  ps-3 text-success d-inline-block"> {{Bestproduct?.price}} EGP </p>
+        <p class="card-text text-danger fw-bold mb-0" *ngIf="Bestproduct?.offer!=''">Offer : {{Bestproduct?.offer}}
+        </p>
+    </div>
+</div>
+
+<app-login-alert [visible]="isAlertVisible" (closed)="isAlertVisible = false"></app-login-alert>

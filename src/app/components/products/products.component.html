@@ -1,6 +1,6 @@
-<div class="card shadow-lg mb-3  " >
+<div class="card shadow-lg mb-3 " >
     <div class="position-relative mt-3 mx-auto">
-        <img [src]="product?.img" class="card-img-top image  img-fluid  shadow rounded " 
+        <img [src]="product?.img" class="card-img-top image  img-fluid  shadow rounded  " 
         [alt]="product?.name" (click)="openDetails(product!.id)">
 
         <a (click)="addToFavourite(product!.id)" class="pe-auto">
@@ -14,3 +14,4 @@
         <p class="card-text text-danger fw-bold mb-0" *ngIf="product?.offer!=''">Offer : {{product?.offer}}</p>
     </div>
 </div>
+<app-login-alert [visible]="isAlertVisible"  (closed)="isAlertVisible = false"></app-login-alert>

@@ -1,11 +1,14 @@
 
 .card{
     width: 18rem;
+   
 }
 .card-img-top{
     width:16rem ;
      height:16rem;
 }
+
+
 @media (min-width: 576px) and (max-width: 678px) { 
   
     .card{

@@ -14,6 +14,7 @@ export class ProductsComponent {
   source: string = '../../../../assets/icons/favoriteIcon.svg';
   @Input() product: Products | undefined;
   displayproducts: Products[] | undefined;
+  isAlertVisible=false;
   constructor(private productService: ProductService,
     private favService: FavouriteService,
     private router: Router,
@@ -28,10 +29,7 @@ export class ProductsComponent {
       this.favService.addToFavourite(prodId);
 
     else {
-      const userConfirmed = alert("please Login First");
-      if (userConfirmed == undefined) {
-        this.router.navigate(['Login']);
-      }
+      this.isAlertVisible=true;
     }
 
   }

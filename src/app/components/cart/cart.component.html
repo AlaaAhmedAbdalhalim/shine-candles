@@ -38,12 +38,14 @@
           <p class="card-text">Total <span class="mx-auto">{{calculateSubtotal()+40}}</span></p>
           
         </div>
-        <a href="#" class="btn btn-primary card-footer">Checkout</a>
+       <!--  <a  class="btn btn-primary card-footer" (click)="checkout()">Checkout</a> -->
+       <app-paypal-button [Total]="CartTotal"></app-paypal-button>
+
 </div>
 </div>
 <div  *ngIf="cartProductsWithQuantities.length === 0">
     <div class=" d-flex flex-column justify-content-center align-items-center mx-5 " style="height: 100vh;">
-        <img src="../../../assets/icons/Add to cart.svg" alt="Empty Cart Icon">
+        <img src="../../../assets/icons/Add to cart.svg" alt="Empty Cart Icon" class="noCartItems">
         <p class="textColor">There are no Items in Cart products until now, click on the Add To Cart Button to add it
             here </p>
     </div>
